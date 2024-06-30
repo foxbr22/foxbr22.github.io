@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Personality Matching and Fill-in Activity</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 20px;
+            background-color: #f0f0f0;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background-color: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        h1 {
+            color: #2c3e50;
+            text-align: center;
+        }
+        .question {
+            margin-bottom: 20px;
+            padding: 15px;
+            background-color: #ecf0f1;
+            border-radius: 5px;
+        }
+        .options {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 10px;
+        }
+        .option {
+            padding: 5px 10px;
+            background-color: #3498db;
+            color: white;
+            border-radius: 3px;
+        }
+        .fill-in {
+            margin-top: 10px;
+        }
+        input[type="text"] {
+            width: 150px;
+            padding: 5px;
+            margin-left: 5px;
+        }
+        #checkAnswers {
+            display: block;
+            margin: 20px auto;
+            padding: 10px 20px;
+            background-color: #2ecc71;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        #checkAnswers:hover {
+            background-color: #27ae60;
+        }
+        #results {
+            margin-top: 20px;
+            padding: 10px;
+            background-color: #f1c40f;
+            border-radius: 5px;
+            display: none;
+        }
+        .correct {
+            color: #27ae60;
+        }
+        .incorrect {
+            color: #c0392b;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Personality Matching and Fill-in Activity</h1>
+        <p>Read each description and complete the sentence with the most appropriate personality trait.</p>
+
+        <!-- Original 12 questions -->
+        <div class="question" data-answer="generous">
+            <p>1. Sarah always offers to help her classmates with their homework and volunteers at the local animal shelter every weekend. She is really ______.</p>
+            <div class="options">
+                <span class="option">generous</span>
+                <span class="option">intelligent</span>
+                <span class="option">brave</span>
+            </div>
+            <div class="fill-in">
+                <label>Complete the sentence:</label>
+                <input type="text" placeholder="Enter a word">
+            </div>
+        </div>
+
+        <!-- ... (original questions 2-11 remain the same) ... -->
+
+        <div class="question" data-answer="generous">
+            <p>12. Sophie donates a significant portion of her salary to charity and often buys gifts for her friends just to make them happy. She is really ______.</p>
+            <div class="options">
+                <span class="option">generous</span>
+                <span class="option">reliable</span>
+                <span class="option">intelligent</span>
+            </div>
+            <div class="fill-in">
+                <label>Complete the sentence:</label>
+                <input type="text" placeholder="Enter a word">
+            </div>
+        </div>
+
+        <!-- New questions start here -->
+        <div class="question" data-answer="easygoing">
+            <p>13. Despite the heavy traffic causing him to be late, Jack remained calm and didn't let it ruin his mood. He is really ______.</p>
+            <div class="options">
+                <span class="option">easygoing</span>
+                <span class="option">serious</span>
+                <span class="option">nervous</span>
+            </div>
+            <div class="fill-in">
+                <label>Complete the sentence:</label>
+                <input type="text" placeholder="Enter a word">
+            </div>
+        </div>
+
+        <div class="question" data-answer="honest">
+            <p>14. Even when it might get her into trouble, Lily always admits her mistakes and tells the truth. She is really ______.</p>
+            <div class="options">
+                <span class="option">honest</span>
+                <span class="option">brave</span>
+                <span class="option">cheerful</span>
+            </div>
+            <div class="fill-in">
+                <label>Complete the sentence:</label>
+                <input type="text" placeholder="Enter a word">
+            </div>
+        </div>
+
+        <div class="question" data-answer="sociable">
+            <p>15. At every office party, Robert makes sure to talk to everyone and make new employees feel welcome. He is really ______.</p>
+            <div class="options">
+                <span class="option">sociable</span>
+                <span class="option">intelligent</span>
+                <span class="option">reliable</span>
+            </div>
+            <div class="fill-in">
+                <label>Complete the sentence:</label>
+                <input type="text" placeholder="Enter a word">
+            </div>
+        </div>
+
+        <div class="question" data-answer="reliable">
+            <p>16. Whenever Amanda makes a promise, her friends know she'll keep it no matter what. She is really ______.</p>
+            <div class="options">
+                <span class="option">reliable</span>
+                <span class="option">brave</span>
+                <span class="option">cheerful</span>
+            </div>
+            <div class="fill-in">
+                <label>Complete the sentence:</label>
+                <input type="text" placeholder="Enter a word">
+            </div>
+        </div>
+
+        <div class="question" data-answer="cheerful">
+            <p>17. Even on rainy days, Mark's positive attitude brightens up the office atmosphere. He is really ______.</p>
+            <div class="options">
+                <span class="option">cheerful</span>
+                <span class="option">serious</span>
+                <span class="option">intelligent</span>
+            </div>
+            <div class="fill-in">
+                <label>Complete the sentence:</label>
+                <input type="text" placeholder="Enter a word">
+            </div>
+        </div>
+
+        <div class="question" data-answer="intelligent">
+            <p>18. Laura's ability to quickly solve complex problems and come up with innovative ideas impresses everyone at work. She is really ______.</p>
+            <div class="options">
+                <span class="option">intelligent</span>
+                <span class="option">brave</span>
+                <span class="option">sociable</span>
+            </div>
+            <div class="fill-in">
+                <label>Complete the sentence:</label>
+                <input type="text" placeholder="Enter a word">
+            </div>
+        </div>
+
+        <div class="question" data-answer="brave">
+            <p>19. Despite his fear of heights, Tim volunteered to clean the windows on the 30th floor to help his co-worker. He is really ______.</p>
+            <div class="options">
+                <span class="option">brave</span>
+                <span class="option">easygoing</span>
+                <span class="option">honest</span>
+            </div>
+            <div class="fill-in">
+                <label>Complete the sentence:</label>
+                <input type="text" placeholder="Enter a word">
+            </div>
+        </div>
+
+        <div class="question" data-answer="selfish">
+            <p>20. When the team received a bonus, Paul insisted on keeping the largest share for himself without considering others' contributions. He is really ______.</p>
+            <div class="options">
+                <span class="option">selfish</span>
+                <span class="option">serious</span>
+                <span class="option">nervous</span>
+            </div>
+            <div class="fill-in">
+                <label>Complete the sentence:</label>
+                <input type="text" placeholder="Enter a word">
+            </div>
+        </div>
+
+        <div class="question" data-answer="nervous">
+            <p>21. Before giving his presentation, Alex's hands were shaking and he couldn't stop pacing back and forth. He is really ______.</p>
+            <div class="options">
+                <span class="option">nervous</span>
+                <span class="option">serious</span>
+                <span class="option">honest</span>
+            </div>
+            <div class="fill-in">
+                <label>Complete the sentence:</label>
+                <input type="text" placeholder="Enter a word">
+            </div>
+        </div>
+
+        <div class="question" data-answer="serious">
+            <p>22. During team meetings, Rachel always stays focused on the agenda and rarely engages in casual conversation or jokes. She is really ______.</p>
+            <div class="options">
+                <span class="option">serious</span>
+                <span class="option">reliable</span>
+                <span class="option">sociable</span>
+            </div>
+            <div class="fill-in">
+                <label>Complete the sentence:</label>
+                <input type="text" placeholder="Enter a word">
+            </div>
+        </div>
+
+        <div class="question" data-answer="generous">
+            <p>23. Without hesitation, Kevin offered to cover his colleague's shift so they could attend their child's school play. He is really ______.</p>
+            <div class="options">
+                <span class="option">generous</span>
+                <span class="option">easygoing</span>
+                <span class="option">intelligent</span>
+            </div>
+            <div class="fill-in">
+                <label>Complete the sentence:</label>
+                <input type="text" placeholder="Enter a word">
+            </div>
+        </div>
+
+        <div class="question" data-answer="helpful">
+            <p>24. Whenever a new employee joins the team, Diana takes the time to show them around and answer all their questions. She is really ______.</p>
+            <div class="options">
+                <span class="option">helpful</span>
+                <span class="option">cheerful</span>
+                <span class="option">brave</span>
+            </div>
+            <div class="fill-in">
+                <label>Complete the sentence:</label>
+                <input type="text" placeholder="Enter a word">
+            </div>
+        </div>
+
+        <button id="checkAnswers">Check Answers</button>
+        <div id="results"></div>
+    </div>
+
+    <script>
+        document.getElementById('checkAnswers').addEventListener('click', function() {
+            let correct = 0;
+            let feedback = '';
+            document.querySelectorAll('.question').forEach((question, index) => {
+                const filledWord = question.querySelector('input[type="text"]').value.trim().toLowerCase();
+                const correctAnswer = question.dataset.answer;
+
+                if (filledWord === correctAnswer) {
+                    correct++;
+                    feedback += `<p class="correct">Question ${index + 1}: Correct!</p>`;
+                } else {
+                    feedback += `<p class="incorrect">Question ${index + 1}: Incorrect. The correct answer is "${correctAnswer}".</p>`;
+                }
+            });
+
+            const resultsDiv = document.getElementById('results');
+            resultsDiv.innerHTML = `<h2>Results</h2><p>You got ${correct} out of 24 correct.</p>${feedback}`;
+            resultsDiv.style.display = 'block';
+        });
+    </script>
+</body>
+</html>
