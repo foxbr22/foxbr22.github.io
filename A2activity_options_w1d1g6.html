@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>A2activity_options_w1d1g6: Possessive Pronouns and 'Whose' Exercises</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            background-color: #e6f3ff;
+            line-height: 1.6;
+            margin: 0;
+            padding: 20px;
+        }
+        h1, h2 {
+            color: #333;
+        }
+        .content {
+            background-color: #e6f3ff;
+            padding: 20px;
+            border-radius: 5px;
+            max-width: 800px;
+            width: 100%;
+        }
+        .question {
+            margin-bottom: 20px;
+        }
+        .options {
+            margin-left: 20px;
+        }
+        .navigation {
+            display: flex;
+            justify-content: space-between;
+            width: 100%;
+            max-width: 600px;
+            margin-top: 20px;
+        }
+        .button {
+            padding: 10px 20px;
+            font-size: 16px;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            text-decoration: none;
+            text-align: center;
+            flex: 1;
+            margin: 0 5px;
+        }
+        .back, .check, .home {
+            background-color: #4CAF50;
+        }
+        .button:hover {
+            opacity: 0.8;
+        }
+        .incorrect {
+            color: red;
+        }
+        #successMessage {
+            color: green;
+            font-weight: bold;
+            margin-top: 20px;
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <h1>Possessive Pronouns and 'Whose' - Exercises</h1>
+    
+    <div class="content">
+        <div id="questions">
+            <div class="question">
+                <p>1. Complete the sentence: "This book is ___."</p>
+                <div class="options">
+                    <input type="radio" name="q1" value="a"> a) my<br>
+                    <input type="radio" name="q1" value="b"> b) mine<br>
+                    <input type="radio" name="q1" value="c"> c) me<br>
+                </div>
+            </div>
+
+            <div class="question">
+                <p>2. Choose the correct possessive pronoun: "The red car is ___."</p>
+                <div class="options">
+                    <input type="radio" name="q2" value="a"> a) her<br>
+                    <input type="radio" name="q2" value="b"> b) hers<br>
+                    <input type="radio" name="q2" value="c"> c) she<br>
+                </div>
+            </div>
+
+            <div class="question">
+                <p>3. Fill in the blank: "___ is this pen?"</p>
+                <div class="options">
+                    <input type="radio" name="q3" value="a"> a) Who<br>
+                    <input type="radio" name="q3" value="b"> b) Whom<br>
+                    <input type="radio" name="q3" value="c"> c) Whose<br>
+                </div>
+            </div>
+
+            <div class="question">
+                <p>4. Select the correct sentence:</p>
+                <div class="options">
+                    <input type="radio" name="q4" value="a"> a) That laptop is your.<br>
+                    <input type="radio" name="q4" value="b"> b) That laptop is yours.<br>
+                    <input type="radio" name="q4" value="c"> c) That laptop is you.<br>
+                </div>
+            </div>
+
+            <div class="question">
+                <p>5. Complete the sentence: "The dog wagged ___ tail."</p>
+                <div class="options">
+                    <input type="radio" name="q5" value="a"> a) it's<br>
+                    <input type="radio" name="q5" value="b"> b) its<br>
+                    <input type="radio" name="q5" value="c"> c) it<br>
+                </div>
+            </div>
+
+            <div class="question">
+                <p>6. Choose the correct sentence:</p>
+                <div class="options">
+                    <input type="radio" name="q6" value="a"> a) The blue hat is my.<br>
+                    <input type="radio" name="q6" value="b"> b) The blue hat is mine.<br>
+                    <input type="radio" name="q6" value="c"> c) The blue hat is me.<br>
+                </div>
+            </div>
+
+            <div class="question">
+                <p>7. Fill in the blank: "I don't know ___ book this is."</p>
+                <div class="options">
+                    <input type="radio" name="q7" value="a"> a) who's<br>
+                    <input type="radio" name="q7" value="b"> b) whose<br>
+                    <input type="radio" name="q7" value="c"> c) whom<br>
+                </div>
+            </div>
+
+            <div class="question">
+                <p>8. Select the correct possessive pronoun: "Is this car ___?"</p>
+                <div class="options">
+                    <input type="radio" name="q8" value="a"> a) they<br>
+                    <input type="radio" name="q8" value="b"> b) their<br>
+                    <input type="radio" name="q8" value="c"> c) theirs<br>
+                </div>
+            </div>
+        </div>
+
+        <div id="successMessage">Great job! You've mastered possessive pronouns and 'whose'!</div>
+    </div>
+
+    <div class="navigation">
+        <a href="A2activity_options_w1d1g5.html" class="button back">Back</a>
+        <button onclick="checkAnswers()" class="button check">Check Answers</button>
+        <a href="A2activity_options_w1d1.html" class="button home">Go back to the beginning</a>
+    </div>
+
+    <script>
+        function checkAnswers() {
+            const correctAnswers = {
+                q1: 'b', q2: 'b', q3: 'c', q4: 'b',
+                q5: 'b', q6: 'b', q7: 'b', q8: 'c'
+            };
+
+            let allCorrect = true;
+            let allAnswered = true;
+
+            for (let i = 1; i <= 8; i++) {
+                const questionName = `q${i}`;
+                const selectedAnswer = document.querySelector(`input[name="${questionName}"]:checked`);
+                const questionElement = document.querySelector(`input[name="${questionName}"]`).closest('.question');
+
+                if (selectedAnswer) {
+                    if (selectedAnswer.value === correctAnswers[questionName]) {
+                        questionElement.classList.remove('incorrect');
+                    } else {
+                        questionElement.classList.add('incorrect');
+                        allCorrect = false;
+                    }
+                } else {
+                    questionElement.classList.add('incorrect');
+                    allCorrect = false;
+                    allAnswered = false;
+                }
+            }
+
+            const successMessage = document.getElementById('successMessage');
+            const checkButton = document.querySelector('.check');
+
+            if (!allAnswered) {
+                alert("Please answer all questions before checking your answers.");
+            } else if (allCorrect) {
+                successMessage.style.display = 'block';
+                checkButton.style.display = 'none';
+            } else {
+                successMessage.style.display = 'none';
+                alert("Some answers are incorrect. The incorrect questions are marked in red. Please try again!");
+            }
+        }
+    </script>
+</body>
+</html>

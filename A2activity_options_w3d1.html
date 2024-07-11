@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ESL Learning Portal - Choose Your Activity</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .container {
+            background-color: white;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+        h1 {
+            color: #333;
+            margin-bottom: 1.5rem;
+        }
+        .activity-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1rem;
+            margin-top: 2rem;
+        }
+        .activity-button {
+            padding: 1rem;
+            font-size: 1.2rem;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        .activity-button:hover {
+            opacity: 0.8;
+        }
+        .activity-button.vocabulary {
+            background-color: #007bff;
+        }
+        .activity-button.grammar {
+            background-color: #28a745;
+        }
+        .activity-button.listening {
+            background-color: #ffc107; /* Golden Yellow */
+            color: black; /* Black text for better contrast */
+        }
+        .activity-button.reading {
+            background-color: #dc3545; /* Red */
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Choose Your Activity</h1>
+        <p>Please select the type of activity you want to do:</p>
+        <div class="activity-grid">
+            <button class="activity-button vocabulary" onclick="selectActivity('V')">Vocabulary</button>
+            <button class="activity-button grammar" onclick="selectActivity('G')">Grammar</button>
+            <button class="activity-button listening" onclick="selectActivity('L')">Listening</button>
+            <button class="activity-button reading" onclick="selectActivity('R')">Reading</button>
+        </div>
+    </div>
+
+    <script>
+        function selectActivity(activityKey) {
+            // Get the current filename
+            const path = window.location.pathname;
+            const currentFile = path.substring(path.lastIndexOf('/') + 1);
+
+            // Extract the level, week, and day from the filename
+            const match = currentFile.match(/^(\w+)(activity_options_w\d+d\d+)\.html$/);
+
+            // Debugging statements
+            console.log("Current File:", currentFile);
+            console.log("Match:", match);
+
+            if (!match) {
+                alert('Filename format is incorrect!');
+                return;
+            }
+
+            const level = match[1];
+            const weekDay = match[2].replace('activity_options_', '');
+
+            // Construct the new filename
+            const filename = `${level}${activityKey}${weekDay}.html`;
+
+            console.log("Redirecting to:", filename);  // Debugging statement
+            window.location.href = filename;
+        }
+    </script>
+</body>
+</html>

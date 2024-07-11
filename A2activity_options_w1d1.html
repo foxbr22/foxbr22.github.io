@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ESL Learning Portal - Choose Your Activity</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .container {
+            background-color: white;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+        h1 {
+            color: #333;
+            margin-bottom: 1.5rem;
+        }
+        .activity-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1rem;
+            margin-top: 2rem;
+        }
+        .activity-button {
+            padding: 1rem;
+            font-size: 1.2rem;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        .activity-button:hover {
+            opacity: 0.8;
+        }
+        .activity-button.vocabulary {
+            background-color: #007bff;
+        }
+        .activity-button.grammar {
+            background-color: #28a745;
+        }
+        .activity-button.listening {
+            background-color: #ffc107;
+            color: black;
+        }
+        .activity-button.reading {
+            background-color: #dc3545;
+        }
+        .back-button {
+            margin-top: 2rem;
+            padding: 1rem;
+            font-size: 1.2rem;
+            color: white;
+            background-color: #6c757d;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        .back-button:hover {
+            opacity: 0.8;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Choose Your Activity</h1>
+        <p>Please select the type of activity you want to do:</p>
+        <div class="activity-grid">
+            <button class="activity-button vocabulary" onclick="selectActivity('v')">Vocabulary</button>
+            <button class="activity-button grammar" onclick="selectActivity('g')">Grammar</button>
+            <button class="activity-button listening" onclick="selectActivity('l')">Listening</button>
+            <button class="activity-button reading" onclick="selectActivity('r')">Reading</button>
+        </div>
+        <button class="back-button" onclick="goBack()">Back</button>
+    </div>
+    <script>
+        function selectActivity(activityKey) {
+            // Get the current filename
+            const path = window.location.pathname;
+            const currentFile = path.substring(path.lastIndexOf('/') + 1);
+            
+            // Updated regex to match the current filename format
+            const match = currentFile.match(/^(\w+activity_options_w\d+d\d+)\.html$/);
+            
+            // Debug information
+            console.log("Current File:", currentFile);
+            console.log("Match:", match);
+            
+            if (!match) {
+                alert('Filename format is incorrect!');
+                return;
+            }
+            
+            const baseFilename = match[1];
+            
+            // Construct the new filename with the correct format
+            const filename = `${baseFilename}${activityKey}1.html`;
+            
+            console.log("Redirecting to:", filename);
+            window.location.href = filename;
+        }
+
+        function goBack() {
+            // Get the current filename
+            const path = window.location.pathname;
+            const currentFile = path.substring(path.lastIndexOf('/') + 1);
+            
+            // Extract the first two letters to construct the back filename
+            const match = currentFile.match(/^(\w\w)activity_options_w\d+d\d+\.html$/);
+            
+            // Debug information
+            console.log("Current File:", currentFile);
+            console.log("Match:", match);
+            
+            if (!match) {
+                alert('Filename format is incorrect!');
+                return;
+            }
+            
+            const base = match[1];
+            
+            // Construct the back filename
+            const backFilename = `${base}_week.html`;
+            
+            console.log("Redirecting to:", backFilename);
+            window.location.href = backFilename;
+        }
+    </script>
+</body>
+</html>

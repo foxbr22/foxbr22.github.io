@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ESL Learning Portal - [A2] Week Selection</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 20px;
+            background-color: #f4f4f4;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background-color: white;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            color: #333;
+            text-align: center;
+            margin-bottom: 1.5rem;
+        }
+        .week-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1rem;
+            padding: 1rem;
+            background-color: #e9ecef;
+            border-radius: 5px;
+        }
+        .week-label {
+            font-weight: bold;
+            font-size: 1.2rem;
+        }
+        .day-buttons {
+            display: flex;
+            gap: 10px;
+        }
+        .day-button {
+            padding: 0.5rem 1rem;
+            font-size: 1rem;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        .day-button.day1 {
+            background-color: #28a745;
+        }
+        .day-button.day1:hover {
+            background-color: #218838;
+        }
+        .day-button.day2 {
+            background-color: #007bff;
+        }
+        .day-button.day2:hover {
+            background-color: #0056b3;
+        }
+        .back-button {
+            display: block;
+            width: 100px;
+            margin: 20px auto 0;
+            padding: 10px;
+            background-color: #6c757d;
+            color: white;
+            text-align: center;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+        .back-button:hover {
+            background-color: #5a6268;
+        }
+        #debug-info {
+            margin-top: 20px;
+            padding: 10px;
+            background-color: #f8f9fa;
+            border: 1px solid #dee2e6;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>ESL Learning Portal - [A2] Weeks</h1>
+        
+        <!-- All 12 weeks -->
+        <div class="week-container">
+            <span class="week-label">Week 1</span>
+            <div class="day-buttons">
+                <button class="day-button day1" onclick="selectDay('1', '1')">Day 1</button>
+                <button class="day-button day2" onclick="selectDay('1', '2')">Day 2</button>
+            </div>
+        </div>
+
+        <div class="week-container">
+            <span class="week-label">Week 2</span>
+            <div class="day-buttons">
+                <button class="day-button day1" onclick="selectDay('2', '1')">Day 1</button>
+                <button class="day-button day2" onclick="selectDay('2', '2')">Day 2</button>
+            </div>
+        </div>
+
+        <div class="week-container">
+            <span class="week-label">Week 3</span>
+            <div class="day-buttons">
+                <button class="day-button day1" onclick="selectDay('3', '1')">Day 1</button>
+                <button class="day-button day2" onclick="selectDay('3', '2')">Day 2</button>
+            </div>
+        </div>
+
+        <div class="week-container">
+            <span class="week-label">Week 4</span>
+            <div class="day-buttons">
+                <button class="day-button day1" onclick="selectDay('4', '1')">Day 1</button>
+                <button class="day-button day2" onclick="selectDay('4', '2')">Day 2</button>
+            </div>
+        </div>
+
+        <div class="week-container">
+            <span class="week-label">Week 5</span>
+            <div class="day-buttons">
+                <button class="day-button day1" onclick="selectDay('5', '1')">Day 1</button>
+                <button class="day-button day2" onclick="selectDay('5', '2')">Day 2</button>
+            </div>
+        </div>
+
+        <div class="week-container">
+            <span class="week-label">Week 6</span>
+            <div class="day-buttons">
+                <button class="day-button day1" onclick="selectDay('6', '1')">Day 1</button>
+                <button class="day-button day2" onclick="selectDay('6', '2')">Day 2</button>
+            </div>
+        </div>
+
+        <div class="week-container">
+            <span class="week-label">Week 7</span>
+            <div class="day-buttons">
+                <button class="day-button day1" onclick="selectDay('7', '1')">Day 1</button>
+                <button class="day-button day2" onclick="selectDay('7', '2')">Day 2</button>
+            </div>
+        </div>
+
+        <div class="week-container">
+            <span class="week-label">Week 8</span>
+            <div class="day-buttons">
+                <button class="day-button day1" onclick="selectDay('8', '1')">Day 1</button>
+                <button class="day-button day2" onclick="selectDay('8', '2')">Day 2</button>
+            </div>
+        </div>
+
+        <div class="week-container">
+            <span class="week-label">Week 9</span>
+            <div class="day-buttons">
+                <button class="day-button day1" onclick="selectDay('9', '1')">Day 1</button>
+                <button class="day-button day2" onclick="selectDay('9', '2')">Day 2</button>
+            </div>
+        </div>
+
+        <div class="week-container">
+            <span class="week-label">Week 10</span>
+            <div class="day-buttons">
+                <button class="day-button day1" onclick="selectDay('10', '1')">Day 1</button>
+                <button class="day-button day2" onclick="selectDay('10', '2')">Day 2</button>
+            </div>
+        </div>
+
+        <div class="week-container">
+            <span class="week-label">Week 11</span>
+            <div class="day-buttons">
+                <button class="day-button day1" onclick="selectDay('11', '1')">Day 1</button>
+                <button class="day-button day2" onclick="selectDay('11', '2')">Day 2</button>
+            </div>
+        </div>
+
+        <div class="week-container">
+            <span class="week-label">Week 12</span>
+            <div class="day-buttons">
+                <button class="day-button day1" onclick="selectDay('12', '1')">Day 1</button>
+                <button class="day-button day2" onclick="selectDay('12', '2')">Day 2</button>
+            </div>
+        </div>
+
+        <a href="index.html" class="back-button">Back</a>
+
+        <div id="debug-info"></div>
+    </div>
+
+    <script>
+        function selectDay(week, day) {
+            const fileName = `A2activity_options_w${week}d${day}.html`;
+            const debugInfo = document.getElementById('debug-info');
+            debugInfo.innerHTML = `Attempting to navigate to: ${fileName}<br>`;
+
+            // Log the attempt
+            console.log(`Attempting to navigate to: ${fileName}`);
+
+            // Attempt to navigate to the file
+            const originalLocation = window.location.href;
+            window.location.href = fileName;
+
+            // Set a timeout to check if the navigation was successful
+            setTimeout(function() {
+                if (window.location.href === originalLocation) {
+                    // Navigation failed
+                    console.log(`Navigation failed for: ${fileName}`);
+                    debugInfo.innerHTML += `Navigation failed. File may not exist: ${fileName}<br>`;
+                    alert(`You selected Week ${week}, Day ${day}. The file ${fileName} may not exist.`);
+                } else {
+                    console.log(`Successfully navigated to: ${fileName}`);
+                    debugInfo.innerHTML += `Successfully navigated to: ${fileName}<br>`;
+                }
+            }, 100); // 100ms should be enough time for the navigation to start
+        }
+
+        // Add event listeners to all buttons
+        document.addEventListener('DOMContentLoaded', function() {
+            const buttons = document.querySelectorAll('.day-button');
+            buttons.forEach(button => {
+                button.addEventListener('click', function(e) {
+                    const week = this.parentNode.parentNode.querySelector('.week-label').textContent.split(' ')[1];
+                    const day = this.textContent.split(' ')[1];
+                    selectDay(week, day);
+                    e.preventDefault(); // Prevent default button behavior
+                });
+            });
+        });
+    </script>
+</body>
+</html>

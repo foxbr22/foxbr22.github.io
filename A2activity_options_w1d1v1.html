@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ana's Family Tree Activity</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            background-color: #f0f0f0;
+        }
+        .reference-box {
+            background-color: #e0e0e0;
+            padding: 10px;
+            margin-bottom: 20px;
+            border-radius: 5px;
+        }
+        .family-tree {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            position: relative;
+        }
+        .generation {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 60px;
+            position: relative;
+        }
+        .person {
+            width: 100px;
+            height: 100px;
+            margin: 0 30px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            position: relative;
+            z-index: 2;
+        }
+        .male {
+            background-color: #a0d0ff;
+        }
+        .female {
+            background-color: #ffc0cb;
+        }
+        input {
+            width: 80px;
+            text-align: center;
+            margin-top: 5px;
+        }
+        button {
+            margin-top: 20px;
+            padding: 10px 20px;
+            font-size: 16px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+        .incorrect {
+            background-color: #ff6666;
+        }
+        .line {
+            position: absolute;
+            background-color: #333;
+            z-index: 1;
+        }
+        .vertical-line {
+            width: 2px;
+        }
+        .horizontal-line {
+            height: 2px;
+        }
+        .strikethrough {
+            text-decoration: line-through;
+        }
+        .navigation {
+            display: flex;
+            justify-content: space-between;
+            width: 100%;
+            max-width: 400px;
+            margin-top: 20px;
+        }
+        #successMessage {
+            color: green;
+            font-weight: bold;
+            margin-top: 20px;
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <h1>Ana's Family Tree Activity</h1>
+    <div class="reference-box">
+        Relations: brother, sister, <span class="strikethrough">father</span>, <span class="strikethrough">mother</span>, grandfather, grandmother, son, daughter, aunt, uncle
+    </div>
+    <div class="family-tree">
+        <!-- Generation 1 -->
+        <div class="generation">
+            <div class="person male">
+                <input type="text" id="grandfather1" placeholder="Relation to Ana">
+            </div>
+            <div class="person female">
+                <input type="text" id="grandmother1" placeholder="Relation to Ana">
+            </div>
+            <div class="person male">
+                <input type="text" id="grandfather2" placeholder="Relation to Ana">
+            </div>
+            <div class="person female">
+                <input type="text" id="grandmother2" placeholder="Relation to Ana">
+            </div>
+        </div>
+        <!-- Connecting lines -->
+        <div class="line horizontal-line" style="top: 130px; left: 65px; width: 570px;"></div>
+        <div class="line vertical-line" style="top: 130px; left: 180px; height: 60px;"></div>
+        <div class="line vertical-line" style="top: 130px; left: 520px; height: 60px;"></div>
+
+        <!-- Generation 2 -->
+        <div class="generation">
+            <div class="person male">
+                <input type="text" id="uncle" placeholder="Relation to Ana">
+            </div>
+            <div class="person male">
+                Father
+            </div>
+            <div class="person female">
+                Mother
+            </div>
+            <div class="person female">
+                <input type="text" id="aunt" placeholder="Relation to Ana">
+            </div>
+        </div>
+        <!-- Connecting lines -->
+        <div class="line horizontal-line" style="top: 290px; left: 125px; width: 450px;"></div>
+        <div class="line vertical-line" style="top: 290px; left: 350px; height: 60px;"></div>
+
+        <!-- Generation 3 -->
+        <div class="generation">
+            <div class="person male">
+                <input type="text" id="brother" placeholder="Relation to Ana">
+            </div>
+            <div class="person female">
+                Ana
+            </div>
+            <div class="person female">
+                <input type="text" id="sister" placeholder="Relation to Ana">
+            </div>
+        </div>
+        <!-- Connecting lines -->
+        <div class="line horizontal-line" style="top: 450px; left: 180px; width: 340px;"></div>
+        <div class="line vertical-line" style="top: 450px; left: 350px; height: 60px;"></div>
+
+        <!-- Generation 4 -->
+        <div class="generation">
+            <div class="person male">
+                <input type="text" id="son" placeholder="Relation to Ana">
+            </div>
+            <div class="person female">
+                <input type="text" id="daughter" placeholder="Relation to Ana">
+            </div>
+        </div>
+    </div>
+    <button id="submitBtn">Submit Answers</button>
+    <div id="successMessage">You did great!</div>
+    <div class="navigation">
+        <button onclick="window.location.href='A2activity_options_w1d1.html'">Back</button>
+        <button onclick="window.location.href='A2activity_options_w1d1v2.html'">Next Activity</button>
+    </div>
+
+    <script>
+        const correctAnswers = {
+            'grandfather1': 'grandfather',
+            'grandmother1': 'grandmother',
+            'grandfather2': 'grandfather',
+            'grandmother2': 'grandmother',
+            'uncle': 'uncle',
+            'aunt': 'aunt',
+            'brother': 'brother',
+            'sister': 'sister',
+            'son': 'son',
+            'daughter': 'daughter'
+        };
+
+        document.getElementById('submitBtn').addEventListener('click', function() {
+            let allCorrect = true;
+            for (let id in correctAnswers) {
+                const input = document.getElementById(id);
+                const userAnswer = input.value.toLowerCase().trim();
+                if (userAnswer === correctAnswers[id]) {
+                    input.classList.remove('incorrect');
+                } else {
+                    input.classList.add('incorrect');
+                    allCorrect = false;
+                }
+            }
+            if (allCorrect) {
+                document.getElementById('successMessage').style.display = 'block';
+                document.getElementById('submitBtn').style.display = 'none';
+            } else {
+                alert('Some answers are incorrect. Please try again!');
+            }
+        });
+    </script>
+</body>
+</html>

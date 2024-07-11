@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>A2activity_options_w1d1g2: The Verb 'Be' Activities</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            background-color: #e6f3ff;
+            line-height: 1.6;
+            margin: 0;
+            padding: 20px;
+        }
+        h1, h2 {
+            color: #333;
+        }
+        .content {
+            background-color: #e6f3ff;
+            padding: 20px;
+            border-radius: 5px;
+            max-width: 800px;
+            width: 100%;
+        }
+        .question {
+            margin-bottom: 20px;
+        }
+        .options {
+            margin-left: 20px;
+        }
+        .navigation {
+            display: flex;
+            justify-content: space-between;
+            width: 100%;
+            max-width: 400px;
+            margin-top: 20px;
+        }
+        .button {
+            padding: 10px 20px;
+            font-size: 16px;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            text-decoration: none;
+        }
+        .back, .next, .check {
+            background-color: #4CAF50;
+        }
+        .button:hover {
+            opacity: 0.8;
+        }
+        .incorrect {
+            color: red;
+        }
+        #successMessage {
+            color: green;
+            font-weight: bold;
+            margin-top: 20px;
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <h1>The verb 'be' - Activities</h1>
+    
+    <div class="content">
+        <h2>1. Basic Meaning</h2>
+        <div id="section1">
+            <div class="question">
+                <p>1. What does the verb 'be' express?</p>
+                <div class="options">
+                    <input type="radio" name="q1" value="a"> a) Action<br>
+                    <input type="radio" name="q1" value="b"> b) Existence or state of being<br>
+                    <input type="radio" name="q1" value="c"> c) Possession<br>
+                </div>
+            </div>
+            <div class="question">
+                <p>2. Which sentence uses 'be' to express a state?</p>
+                <div class="options">
+                    <input type="radio" name="q2" value="a"> a) She runs fast.<br>
+                    <input type="radio" name="q2" value="b"> b) They have a car.<br>
+                    <input type="radio" name="q2" value="c"> c) The sky is blue.<br>
+                </div>
+            </div>
+            <div class="question">
+                <p>3. In the sentence "There are five apples", what does 'are' express?</p>
+                <div class="options">
+                    <input type="radio" name="q3" value="a"> a) Action<br>
+                    <input type="radio" name="q3" value="b"> b) Existence<br>
+                    <input type="radio" name="q3" value="c"> c) Possession<br>
+                </div>
+            </div>
+            <div class="question">
+                <p>4. What does 'be' express in "I am a student"?</p>
+                <div class="options">
+                    <input type="radio" name="q4" value="a"> a) A temporary action<br>
+                    <input type="radio" name="q4" value="b"> b) A state of being<br>
+                    <input type="radio" name="q4" value="c"> c) A past event<br>
+                </div>
+            </div>
+        </div>
+
+        <h2>2. Uses</h2>
+        <div id="section2">
+            <div class="question">
+                <p>5. Which sentence uses 'be' to describe someone?</p>
+                <div class="options">
+                    <input type="radio" name="q5" value="a"> a) She works as a teacher.<br>
+                    <input type="radio" name="q5" value="b"> b) They have three cats.<br>
+                    <input type="radio" name="q5" value="c"> c) He is tall and handsome.<br>
+                </div>
+            </div>
+            <div class="question">
+                <p>6. How is 'be' used in "The book is on the table"?</p>
+                <div class="options">
+                    <input type="radio" name="q6" value="a"> a) To describe the book<br>
+                    <input type="radio" name="q6" value="b"> b) To state where the book is<br>
+                    <input type="radio" name="q6" value="c"> c) To tell the time<br>
+                </div>
+            </div>
+            <div class="question">
+                <p>7. Which sentence uses 'be' to tell the time?</p>
+                <div class="options">
+                    <input type="radio" name="q7" value="a"> a) The clock is broken.<br>
+                    <input type="radio" name="q7" value="b"> b) We have five minutes left.<br>
+                    <input type="radio" name="q7" value="c"> c) It is 3 o'clock.<br>
+                </div>
+            </div>
+            <div class="question">
+                <p>8. Which sentence uses 'be' in a passive structure?</p>
+                <div class="options">
+                    <input type="radio" name="q8" value="a"> a) They are building a house.<br>
+                    <input type="radio" name="q8" value="b"> b) The house was built in 1990.<br>
+                    <input type="radio" name="q8" value="c"> c) We are at home.<br>
+                </div>
+            </div>
+        </div>
+
+        <h2>3. Questions</h2>
+        <div id="section3">
+            <div class="question">
+                <p>9. How do we form questions with 'be'?</p>
+                <div class="options">
+                    <input type="radio" name="q9" value="a"> a) By adding 'do' before the subject<br>
+                    <input type="radio" name="q9" value="b"> b) By putting 'be' before the noun/pronoun<br>
+                    <input type="radio" name="q9" value="c"> c) By adding 'not' after 'be'<br>
+                </div>
+            </div>
+            <div class="question">
+                <p>10. Which is a correct question form?</p>
+                <div class="options">
+                    <input type="radio" name="q10" value="a"> a) Is she happy?<br>
+                    <input type="radio" name="q10" value="b"> b) Does she is happy?<br>
+                    <input type="radio" name="q10" value="c"> c) She is happy?<br>
+                </div>
+            </div>
+            <div class="question">
+                <p>11. What's the correct question form of "You are a student."?</p>
+                <div class="options">
+                    <input type="radio" name="q11" value="a"> a) You are a student?<br>
+                    <input type="radio" name="q11" value="b"> b) Are you a student?<br>
+                    <input type="radio" name="q11" value="c"> c) Do you are a student?<br>
+                </div>
+            </div>
+            <div class="question">
+                <p>12. What's the correct question form for "It was cold yesterday."?</p>
+                <div class="options">
+                    <input type="radio" name="q12" value="a"> a) Was it cold yesterday?<br>
+                    <input type="radio" name="q12" value="b"> b) Did it was cold yesterday?<br>
+                    <input type="radio" name="q12" value="c"> c) It was cold yesterday?<br>
+                </div>
+            </div>
+        </div>
+
+        <h2>4. Negative Form</h2>
+        <div id="section4">
+            <div class="question">
+                <p>13. How do we form negatives with 'be'?</p>
+                <div class="options">
+                    <input type="radio" name="q13" value="a"> a) By adding 'don't' before 'be'<br>
+                    <input type="radio" name="q13" value="b"> b) By adding 'not' after 'be'<br>
+                    <input type="radio" name="q13" value="c"> c) By adding 'no' before the sentence<br>
+                </div>
+            </div>
+            <div class="question">
+                <p>14. Which is the correct negative form of "I am tired."?</p>
+                <div class="options">
+                    <input type="radio" name="q14" value="a"> a) I am not tired.<br>
+                    <input type="radio" name="q14" value="b"> b) I don't am tired.<br>
+                    <input type="radio" name="q14" value="c"> c) I no am tired.<br>
+                </div>
+            </div>
+            <div class="question">
+                <p>15. What's the negative form of "She is here."?</p>
+                <div class="options">
+                    <input type="radio" name="q15" value="a"> a) She isn't here.<br>
+                    <input type="radio" name="q15" value="b"> b) She doesn't is here.<br>
+                    <input type="radio" name="q15" value="c"> c) She not is here.<br>
+                </div>
+            </div>
+            <div class="question">
+                <p>16. What's the correct negative form of "It was raining."?</p>
+                <div class="options">
+                    <input type="radio" name="q16" value="a"> a) It wasn't raining.<br>
+                    <input type="radio" name="q16" value="b"> b) It didn't was raining.<br>
+                    <input type="radio" name="q16" value="c"> c) It not was raining.<br>
+                </div>
+            </div>
+        </div>
+
+        <h2>5. Contractions</h2>
+        <div id="section5">
+            <div class="question">
+                <p>17. What is the contraction of "she is"?</p>
+                <div class="options">
+                    <input type="radio" name="q17" value="a"> a) she's<br>
+                    <input type="radio" name="q17" value="b"> b) shes<br>
+                    <input type="radio" name="q17" value="c"> c) she'is<br>
+                </div>
+            </div>
+            <div class="question">
+                <p>18. Which is NOT a correct contraction?</p>
+                <div class="options">
+                    <input type="radio" name="q18" value="a"> a) I'm<br>
+                    <input type="radio" name="q18" value="b"> b) you're<br>
+                    <input type="radio" name="q18" value="c"> c) they'ren't<br>
+                </div>
+            </div>
+            <div class="question">
+                <p>19. What's the correct contraction for "is not"?</p>
+                <div class="options">
+                    <input type="radio" name="q19" value="a"> a) is'nt<br>
+                    <input type="radio" name="q19" value="b"> b) isn't<br>
+                    <input type="radio" name="q19" value="c"> c) isnt<br>
+                </div>
+            </div>
+            <div class="question">
+                <p>20. What's the correct contraction in the question "I'm doing well in this class, ___ I?"</p>
+                <div class="options">
+                    <input type="radio" name="q20" value="a"> a) am'nt<br>
+                    <input type="radio" name="q20" value="b"> b) ain't<br>
+                    <input type="radio" name="q20" value="c"> c) aren't<br>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="successMessage">You did great!</div>
+
+    <div class="navigation">
+        <a href="A2activity_options_w1d1g1.html" class="button back">Back</a>
+        <button onclick="checkAnswers()" class="button check">Check Answers</button>
+        <a href="A2activity_options_w1d1g3.html" class="button next">Next</a>
+    </div>
+
+    <script>
+        function checkAnswers() {
+            const correctAnswers = {
+                q1: 'b', q2: 'c', q3: 'b', q4: 'b',
+                q5: 'c', q6: 'b', q7: 'c', q8: 'b',
+                q9: 'b', q10: 'a', q11: 'b', q12: 'a',
+                q13: 'b', q14: 'a', q15: 'a', q16: 'a',
+                q17: 'a', q18: 'c', q19: 'b', q20: 'c'
+            };
+
+            let allCorrect = true;
+            let allAnswered = true;
+
+            for (let i = 1; i <= 20; i++) {
+                const questionName = `q${i}`;
+                const selectedAnswer = document.querySelector(`input[name="${questionName}"]:checked`);
+                const questionElement = document.querySelector(`input[name="${questionName}"]`).closest('.question');
+
+                if (selectedAnswer) {
+                    if (selectedAnswer.value === correctAnswers[questionName]) {
+                        questionElement.classList.remove('incorrect');
+                    } else {
+                        questionElement.classList.add('incorrect');
+                        allCorrect = false;
+                    }
+                } else {
+                    questionElement.classList.add('incorrect');
+                    allCorrect = false;
+                    allAnswered = false;
+                }
+            }
+
+            const successMessage = document.getElementById('successMessage');
+            const checkButton = document.querySelector('.check');
+
+            if (!allAnswered) {
+                alert("Please answer all questions before checking your answers.");
+            } else if (allCorrect) {
+                successMessage.style.display = 'block';
+                checkButton.style.display = 'none';
+            } else {
+                successMessage.style.display = 'none';
+                alert("Some answers are incorrect. The incorrect questions are marked in red. Please try again!");
+            }
+        }
+    </script>
+</body>
+</html>

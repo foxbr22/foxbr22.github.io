@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>A2activity_options_w1d1g4: Possessive Adjectives Activities</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            background-color: #e6f3ff;
+            line-height: 1.6;
+            margin: 0;
+            padding: 20px;
+        }
+        h1, h2 {
+            color: #333;
+        }
+        .content {
+            background-color: #e6f3ff;
+            padding: 20px;
+            border-radius: 5px;
+            max-width: 800px;
+            width: 100%;
+        }
+        .question {
+            margin-bottom: 20px;
+        }
+        .options {
+            margin-left: 20px;
+        }
+        .navigation {
+            display: flex;
+            justify-content: space-between;
+            width: 100%;
+            max-width: 400px;
+            margin-top: 20px;
+        }
+        .button {
+            padding: 10px 20px;
+            font-size: 16px;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            text-decoration: none;
+        }
+        .back, .next, .check {
+            background-color: #4CAF50;
+        }
+        .button:hover {
+            opacity: 0.8;
+        }
+        .incorrect {
+            color: red;
+        }
+        #successMessage {
+            color: green;
+            font-weight: bold;
+            margin-top: 20px;
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <h1>Possessive Adjectives - Activities</h1>
+    
+    <div class="content">
+        <div id="questions">
+            <div class="question">
+                <p>1. Which possessive adjective is used with "I"?</p>
+                <div class="options">
+                    <input type="radio" name="q1" value="a"> a) your<br>
+                    <input type="radio" name="q1" value="b"> b) my<br>
+                    <input type="radio" name="q1" value="c"> c) his<br>
+                </div>
+            </div>
+
+            <div class="question">
+                <p>2. Complete the sentence: "She loves ___ job."</p>
+                <div class="options">
+                    <input type="radio" name="q2" value="a"> a) his<br>
+                    <input type="radio" name="q2" value="b"> b) her<br>
+                    <input type="radio" name="q2" value="c"> c) its<br>
+                </div>
+            </div>
+
+            <div class="question">
+                <p>3. Which sentence uses the possessive adjective correctly?</p>
+                <div class="options">
+                    <input type="radio" name="q3" value="a"> a) The cat licked paw its.<br>
+                    <input type="radio" name="q3" value="b"> b) The cat licked its paw.<br>
+                    <input type="radio" name="q3" value="c"> c) The cat licked it's paw.<br>
+                </div>
+            </div>
+
+            <div class="question">
+                <p>4. What's the possessive adjective for "they"?</p>
+                <div class="options">
+                    <input type="radio" name="q4" value="a"> a) its<br>
+                    <input type="radio" name="q4" value="b"> b) theirs<br>
+                    <input type="radio" name="q4" value="c"> c) their<br>
+                </div>
+            </div>
+
+            <div class="question">
+                <p>5. Choose the correct sentence:</p>
+                <div class="options">
+                    <input type="radio" name="q5" value="a"> a) This is mine book.<br>
+                    <input type="radio" name="q5" value="b"> b) This is my book.<br>
+                    <input type="radio" name="q5" value="c"> c) This is me book.<br>
+                </div>
+            </div>
+
+            <div class="question">
+                <p>6. What's the possessive adjective in "The dog wagged ___ tail"?</p>
+                <div class="options">
+                    <input type="radio" name="q6" value="a"> a) it's<br>
+                    <input type="radio" name="q6" value="b"> b) its<br>
+                    <input type="radio" name="q6" value="c"> c) it<br>
+                </div>
+            </div>
+
+            <div class="question">
+                <p>7. Which is NOT a possessive adjective?</p>
+                <div class="options">
+                    <input type="radio" name="q7" value="a"> a) our<br>
+                    <input type="radio" name="q7" value="b"> b) your<br>
+                    <input type="radio" name="q7" value="c"> c) ours<br>
+                </div>
+            </div>
+
+            <div class="question">
+                <p>8. Complete the sentence: "We forgot ___ umbrellas at home."</p>
+                <div class="options">
+                    <input type="radio" name="q8" value="a"> a) ours<br>
+                    <input type="radio" name="q8" value="b"> b) our<br>
+                    <input type="radio" name="q8" value="c"> c) we<br>
+                </div>
+            </div>
+        </div>
+
+        <div id="successMessage">You did great!</div>
+    </div>
+
+    <div class="navigation">
+        <a href="A2activity_options_w1d1g3.html" class="button back">Back</a>
+        <button onclick="checkAnswers()" class="button check">Check Answers</button>
+        <a href="A2activity_options_w1d1g5.html" class="button next">Next</a>
+    </div>
+
+    <script>
+        function checkAnswers() {
+            const correctAnswers = {
+                q1: 'b', q2: 'b', q3: 'b', q4: 'c',
+                q5: 'b', q6: 'b', q7: 'c', q8: 'b'
+            };
+
+            let allCorrect = true;
+            let allAnswered = true;
+
+            for (let i = 1; i <= 8; i++) {
+                const questionName = `q${i}`;
+                const selectedAnswer = document.querySelector(`input[name="${questionName}"]:checked`);
+                const questionElement = document.querySelector(`input[name="${questionName}"]`).closest('.question');
+
+                if (selectedAnswer) {
+                    if (selectedAnswer.value === correctAnswers[questionName]) {
+                        questionElement.classList.remove('incorrect');
+                    } else {
+                        questionElement.classList.add('incorrect');
+                        allCorrect = false;
+                    }
+                } else {
+                    questionElement.classList.add('incorrect');
+                    allCorrect = false;
+                    allAnswered = false;
+                }
+            }
+
+            const successMessage = document.getElementById('successMessage');
+            const checkButton = document.querySelector('.check');
+
+            if (!allAnswered) {
+                alert("Please answer all questions before checking your answers.");
+            } else if (allCorrect) {
+                successMessage.style.display = 'block';
+                checkButton.style.display = 'none';
+            } else {
+                successMessage.style.display = 'none';
+                alert("Some answers are incorrect. The incorrect questions are marked in red. Please try again!");
+            }
+        }
+    </script>
+</body>
+</html>

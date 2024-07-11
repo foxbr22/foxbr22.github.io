@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>A2activity_options_w1d1l1: Listening Comprehension Exercise</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 20px;
+            background-color: #e6f3ff;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background-color: white;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        h1 {
+            color: #333;
+        }
+        .question {
+            margin-bottom: 20px;
+        }
+        .options {
+            margin-left: 20px;
+        }
+        .button {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #4CAF50;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            margin-top: 20px;
+            cursor: pointer;
+            border: none;
+            font-size: 16px;
+        }
+        .button:hover {
+            background-color: #45a049;
+        }
+        .incorrect {
+            color: red;
+        }
+        #successMessage {
+            color: green;
+            font-weight: bold;
+            margin-top: 20px;
+            display: none;
+        }
+        audio {
+            width: 100%;
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+body>
+    <div class="container">
+        <h1>Listening Comprehension Exercise</h1>
+        
+        <audio controls>
+            <source src="A2activity_options_w1d1l1a.mp3" type="audio/mpeg">
+            Your browser does not support the audio element.
+        </audio>
+
+        <div id="questions">
+            <div class="question">
+                <p>1. Who is Alex?</p>
+                <div class="options">
+                    <input type="radio" name="q1" value="a"> A. The narrator's brother<br>
+                    <input type="radio" name="q1" value="b"> B. The narrator's son<br>
+                    <input type="radio" name="q1" value="c"> C. The narrator's nephew<br>
+                    <input type="radio" name="q1" value="d"> D. The narrator's cousin<br>
+                </div>
+            </div>
+
+            <div class="question">
+                <p>2. What does Alex love to do?</p>
+                <div class="options">
+                    <input type="radio" name="q2" value="a"> A. Read books<br>
+                    <input type="radio" name="q2" value="b"> B. Play<br>
+                    <input type="radio" name="q2" value="c"> C. Cook<br>
+                    <input type="radio" name="q2" value="d"> D. Sing<br>
+                </div>
+            </div>
+
+            <div class="question">
+                <p>3. Who is Ben?</p>
+                <div class="options">
+                    <input type="radio" name="q3" value="a"> A. Alex's brother<br>
+                    <input type="radio" name="q3" value="b"> B. The narrator's son<br>
+                    <input type="radio" name="q3" value="c"> C. The narrator's nephew<br>
+                    <input type="radio" name="q3" value="d"> D. The narrator's cousin<br>
+                </div>
+            </div>
+
+            <div class="question">
+                <p>4. How are Alex and Ben related?</p>
+                <div class="options">
+                    <input type="radio" name="q4" value="a"> A. They are brothers<br>
+                    <input type="radio" name="q4" value="b"> B. They are cousins<br>
+                    <input type="radio" name="q4" value="c"> C. They are friends<br>
+                    <input type="radio" name="q4" value="d"> D. They are classmates<br>
+                </div>
+            </div>
+
+            <div class="question">
+                <p>5. Where does Alex keep his toys?</p>
+                <div class="options">
+                    <input type="radio" name="q5" value="a"> A. In the living room<br>
+                    <input type="radio" name="q5" value="b"> B. In a big box in his room<br>
+                    <input type="radio" name="q5" value="c"> C. In the kitchen<br>
+                    <input type="radio" name="q5" value="d"> D. In the garden<br>
+                </div>
+            </div>
+
+            <div class="question">
+                <p>6. What do Alex and Ben sometimes argue about?</p>
+                <div class="options">
+                    <input type="radio" name="q6" value="a"> A. What game to play<br>
+                    <input type="radio" name="q6" value="b"> B. Whose toy it is<br>
+                    <input type="radio" name="q6" value="c"> C. What to eat<br>
+                    <input type="radio" name="q6" value="d"> D. Where to go<br>
+                </div>
+            </div>
+
+            <div class="question">
+                <p>7. What does the narrator tell Alex and Ben to do when they argue?</p>
+                <div class="options">
+                    <input type="radio" name="q7" value="a"> A. Stop playing<br>
+                    <input type="radio" name="q7" value="b"> B. Share<br>
+                    <input type="radio" name="q7" value="c"> C. Go home<br>
+                    <input type="radio" name="q7" value="d"> D. Be quiet<br>
+                </div>
+            </div>
+
+            <div class="question">
+                <p>8. How often does the narrator visit her sister?</p>
+                <div class="options">
+                    <input type="radio" name="q8" value="a"> A. Every day<br>
+                    <input type="radio" name="q8" value="b"> B. Every weekend<br>
+                    <input type="radio" name="q8" value="c"> C. Once a month<br>
+                    <input type="radio" name="q8" value="d"> D. Every holiday<br>
+                </div>
+            </div>
+
+            <div class="question">
+                <p>9. Where is the sister's house located in relation to the narrator's house?</p>
+                <div class="options">
+                    <input type="radio" name="q9" value="a"> A. Far away<br>
+                    <input type="radio" name="q9" value="b"> B. In another city<br>
+                    <input type="radio" name="q9" value="c"> C. Close to the narrator's house<br>
+                    <input type="radio" name="q9" value="d"> D. In another country<br>
+                </div>
+            </div>
+
+            <div class="question">
+                <p>10. What do the narrator and her sister do when they visit each other?</p>
+                <div class="options">
+                    <input type="radio" name="q10" value="a"> A. Cook together<br>
+                    <input type="radio" name="q10" value="b"> B. Talk<br>
+                    <input type="radio" name="q10" value="c"> C. Watch TV<br>
+                    <input type="radio" name="q10" value="d"> D. Go shopping<br>
+                </div>
+            </div>
+        </div>
+
+        <div id="successMessage">Great job! You've completed the listening comprehension exercise!</div>
+
+        <button onclick="checkAnswers()" class="button">Check Answers</button>
+        <a href="A2activity_options_w1d1.html" class="button">Back to Main Page</a>
+    </div>
+
+    <script>
+        function checkAnswers() {
+            const correctAnswers = {
+                q1: 'b', q2: 'b', q3: 'c', q4: 'b', q5: 'b',
+                q6: 'b', q7: 'b', q8: 'b', q9: 'c', q10: 'b'
+            };
+
+            let allCorrect = true;
+            let allAnswered = true;
+
+            for (let i = 1; i <= 10; i++) {
+                const questionName = `q${i}`;
+                const selectedAnswer = document.querySelector(`input[name="${questionName}"]:checked`);
+                const questionElement = document.querySelector(`input[name="${questionName}"]`).closest('.question');
+
+                if (selectedAnswer) {
+                    if (selectedAnswer.value === correctAnswers[questionName]) {
+                        questionElement.classList.remove('incorrect');
+                    } else {
+                        questionElement.classList.add('incorrect');
+                        allCorrect = false;
+                    }
+                } else {
+                    questionElement.classList.add('incorrect');
+                    allCorrect = false;
+                    allAnswered = false;
+                }
+            }
+
+            const successMessage = document.getElementById('successMessage');
+
+            if (!allAnswered) {
+                alert("Please answer all questions before checking your answers.");
+            } else if (allCorrect) {
+                successMessage.style.display = 'block';
+            } else {
+                successMessage.style.display = 'none';
+                alert("Some answers are incorrect. The incorrect questions are marked in red. Please try again!");
+            }
+        }
+    </script>
+</body>
+</html>

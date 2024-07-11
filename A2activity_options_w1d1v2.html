@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Match Words and Definitions</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            padding: 20px;
+            max-width: 800px;
+            margin: 0 auto;
+            background-color: #f0f8ff;
+        }
+        h1 {
+            color: #2c3e50;
+            text-align: center;
+        }
+        .container {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 20px;
+        }
+        .words, .definitions {
+            width: 48%;
+        }
+        .word, .definition {
+            background-color: #ffffff;
+            border: 1px solid #ddd;
+            padding: 10px;
+            margin-bottom: 10px;
+            border-radius: 5px;
+        }
+        input[type="number"] {
+            width: 50px;
+            padding: 5px;
+            margin-right: 10px;
+        }
+        button {
+            display: block;
+            margin: 20px auto;
+            padding: 10px 20px;
+            font-size: 16px;
+            background-color: #2ecc71;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #27ae60;
+        }
+        #result {
+            text-align: center;
+            font-weight: bold;
+            margin-top: 20px;
+        }
+        .navigation {
+            text-align: center;
+            margin-top: 20px;
+        }
+        .correct {
+            background-color: #2ecc71;
+            color: white;
+        }
+        .incorrect {
+            background-color: #e74c3c;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <h1>Match Words and Definitions</h1>
+    <p>Enter the number of the corresponding word in the box next to each definition. Then click "Check Answers".</p>
+    <div class="container">
+        <div class="words" id="words"></div>
+        <div class="definitions" id="definitions"></div>
+    </div>
+    <button onclick="checkAnswers()">Check Answers</button>
+    <div id="result"></div>
+    <div class="navigation">
+        <button onclick="window.location.href='A2activity_options_w1d1v1.html'">Back to Family Tree</button>
+    </div>
+
+    <script>
+        const wordDefinitions = [
+            { word: "neighbor", definition: "A person who lives next door or nearby" },
+            { word: "close friend", definition: "Someone you know well and like a lot" },
+            { word: "sister", definition: "A girl or woman who has the same parents as you" },
+            { word: "classmate", definition: "A student who is in the same class as you" },
+            { word: "worker", definition: "A person who does a job" },
+            { word: "co-worker", definition: "Someone who works at the same place as you" },
+            { word: "boss", definition: "The person in charge at work" },
+            { word: "grandson", definition: "The son of your son or daughter" },
+            { word: "granddaughter", definition: "The daughter of your son or daughter" },
+            { word: "grandchildren", definition: "The children of your children" },
+            { word: "neighborhood", definition: "The area where you live and the people who live there" }
+        ];
+
+        function shuffle(array) {
+            for (let i = array.length - 1; i > 0; i--) {
+                const j = Math.floor(Math.random() * (i + 1));
+                [array[i], array[j]] = [array[j], array[i]];
+            }
+            return array;
+        }
+
+        const shuffledDefinitions = shuffle([...wordDefinitions]);
+
+        wordDefinitions.forEach((item, index) => {
+            const wordDiv = document.createElement('div');
+            wordDiv.className = 'word';
+            wordDiv.textContent = `${index + 1}. ${item.word}`;
+            document.getElementById('words').appendChild(wordDiv);
+        });
+
+        shuffledDefinitions.forEach((item, index) => {
+            const defDiv = document.createElement('div');
+            defDiv.className = 'definition';
+            defDiv.innerHTML = `<input type="number" min="1" max="${wordDefinitions.length}" id="input${index}"> ${item.definition}`;
+            document.getElementById('definitions').appendChild(defDiv);
+        });
+
+        function checkAnswers() {
+            let correct = 0;
+            const definitions = document.querySelectorAll('.definition');
+            
+            shuffledDefinitions.forEach((item, index) => {
+                const input = document.getElementById(`input${index}`);
+                const userAnswer = parseInt(input.value);
+                const correctAnswer = wordDefinitions.findIndex(wd => wd.word === item.word) + 1;
+                
+                if (userAnswer === correctAnswer) {
+                    correct++;
+                    definitions[index].classList.remove('incorrect');
+                    definitions[index].classList.add('correct');
+                } else {
+                    definitions[index].classList.remove('correct');
+                    definitions[index].classList.add('incorrect');
+                }
+            });
+
+            const resultDiv = document.getElementById('result');
+            if (correct === wordDefinitions.length) {
+                resultDiv.textContent = "Congratulations! All matches are correct!";
+                resultDiv.style.color = "green";
+            } else {
+                resultDiv.textContent = `You got ${correct} out of ${wordDefinitions.length} correct. Try again!`;
+                resultDiv.style.color = "red";
+            }
+        }
+    </script>
+</body>
+</html>

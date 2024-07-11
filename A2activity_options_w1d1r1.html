@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>A2activity_options_w1d1g7: Reading Comprehension Exercise</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 20px;
+            background-color: #e6f3ff;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background-color: white;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        h1 {
+            color: #333;
+        }
+        .story {
+            background-color: #f9f9f9;
+            padding: 15px;
+            border-radius: 5px;
+            margin-bottom: 20px;
+        }
+        .question {
+            margin-bottom: 20px;
+        }
+        .options {
+            margin-left: 20px;
+        }
+        .button {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #4CAF50;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            margin-top: 20px;
+        }
+        .button:hover {
+            background-color: #45a049;
+        }
+        .incorrect {
+            color: red;
+        }
+        #successMessage {
+            color: green;
+            font-weight: bold;
+            margin-top: 20px;
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Reading Comprehension Exercise</h1>
+        
+        <div class="story">
+            <p>Last weekend, I took my daughter to the park. She brought her favorite bag with her. It was a sunny day, and we enjoyed walking and talking. She told me about her school and friends, and we had a lovely time together.</p>
+            <p>While we were sitting on a bench, a boy came by with his own bag. He showed us his toys inside and said proudly, "These toys are mine." My daughter smiled and showed him her bag, saying, "This bag is mine, and it has my favorite things in it." They started playing and sharing their toys, laughing and having fun.</p>
+            <p>When it was time to leave, my daughter asked, "Whose bag is that on the bench?" I looked and saw it was hers. I said, "That bag is yours, my dear. Don't forget to take it with you." She grabbed her bag and hugged it tightly, saying, "This bag is definitely mine." She was so happy to have it with her as we walked back home, talking about the fun day we had.</p>
+        </div>
+
+        <div id="questions">
+            <div class="question">
+                <p>1. Where did the narrator take his daughter last weekend?</p>
+                <div class="options">
+                    <input type="radio" name="q1" value="a"> A) To the zoo<br>
+                    <input type="radio" name="q1" value="b"> B) To the park<br>
+                    <input type="radio" name="q1" value="c"> C) To the beach<br>
+                    <input type="radio" name="q1" value="d"> D) To the mall<br>
+                </div>
+            </div>
+
+            <div class="question">
+                <p>2. What did the narrator's daughter bring with her to the park?</p>
+                <div class="options">
+                    <input type="radio" name="q2" value="a"> A) Her favorite book<br>
+                    <input type="radio" name="q2" value="b"> B) Her favorite toy<br>
+                    <input type="radio" name="q2" value="c"> C) Her favorite bag<br>
+                    <input type="radio" name="q2" value="d"> D) Her favorite hat<br>
+                </div>
+            </div>
+
+            <div class="question">
+                <p>3. What was the weather like on the day they went to the park?</p>
+                <div class="options">
+                    <input type="radio" name="q3" value="a"> A) Rainy<br>
+                    <input type="radio" name="q3" value="b"> B) Cloudy<br>
+                    <input type="radio" name="q3" value="c"> C) Windy<br>
+                    <input type="radio" name="q3" value="d"> D) Sunny<br>
+                </div>
+            </div>
+
+            <div class="question">
+                <p>4. What did the narrator's daughter talk about while walking with her father?</p>
+                <div class="options">
+                    <input type="radio" name="q4" value="a"> A) Her school and friends<br>
+                    <input type="radio" name="q4" value="b"> B) Her favorite TV show<br>
+                    <input type="radio" name="q4" value="c"> C) Her pet<br>
+                    <input type="radio" name="q4" value="d"> D) Her new clothes<br>
+                </div>
+            </div>
+
+            <div class="question">
+                <p>5. Who approached them while they were sitting on a bench?</p>
+                <div class="options">
+                    <input type="radio" name="q5" value="a"> A) A girl with a doll<br>
+                    <input type="radio" name="q5" value="b"> B) A boy with his own bag<br>
+                    <input type="radio" name="q5" value="c"> C) A man with a dog<br>
+                    <input type="radio" name="q5" value="d"> D) A woman with a baby<br>
+                </div>
+            </div>
+
+            <div class="question">
+                <p>6. What did the boy show them?</p>
+                <div class="options">
+                    <input type="radio" name="q6" value="a"> A) His books<br>
+                    <input type="radio" name="q6" value="b"> B) His snacks<br>
+                    <input type="radio" name="q6" value="c"> C) His toys inside his bag<br>
+                    <input type="radio" name="q6" value="d"> D) His drawings<br>
+                </div>
+            </div>
+
+            <div class="question">
+                <p>7. What did the narrator's daughter show the boy?</p>
+                <div class="options">
+                    <input type="radio" name="q7" value="a"> A) Her new shoes<br>
+                    <input type="radio" name="q7" value="b"> B) Her drawing<br>
+                    <input type="radio" name="q7" value="c"> C) Her bag with her favorite things<br>
+                    <input type="radio" name="q7" value="d"> D) Her pet<br>
+                </div>
+            </div>
+
+            <div class="question">
+                <p>8. Whose toys were inside the boy's bag?</p>
+                <div class="options">
+                    <input type="radio" name="q8" value="a"> A) The daughter's<br>
+                    <input type="radio" name="q8" value="b"> B) The boy's<br>
+                    <input type="radio" name="q8" value="c"> C) The narrator's<br>
+                    <input type="radio" name="q8" value="d"> D) The girl's<br>
+                </div>
+            </div>
+
+            <div class="question">
+                <p>9. Whose bag was on the bench when it was time to leave?</p>
+                <div class="options">
+                    <input type="radio" name="q9" value="a"> A) The narrator's<br>
+                    <input type="radio" name="q9" value="b"> B) The boy's<br>
+                    <input type="radio" name="q9" value="c"> C) The daughter's<br>
+                    <input type="radio" name="q9" value="d"> D) Another child's<br>
+                </div>
+            </div>
+
+            <div class="question">
+                <p>10. How did the narrator's daughter react when she found out the bag was hers?</p>
+                <div class="options">
+                    <input type="radio" name="q10" value="a"> A) She left it on the bench.<br>
+                    <input type="radio" name="q10" value="b"> B) She gave it to the boy.<br>
+                    <input type="radio" name="q10" value="c"> C) She hugged it tightly and said, "This bag is definitely mine."<br>
+                    <input type="radio" name="q10" value="d"> D) She cried because she lost it.<br>
+                </div>
+            </div>
+        </div>
+
+        <div id="successMessage">Great job! You've completed the reading comprehension exercise!</div>
+
+        <button onclick="checkAnswers()" class="button">Check Answers</button>
+        <a href="A2activity_options_w1d1.html" class="button">Back to Main Page</a>
+    </div>
+
+    <script>
+        function checkAnswers() {
+            const correctAnswers = {
+                q1: 'b', q2: 'c', q3: 'd', q4: 'a', q5: 'b',
+                q6: 'c', q7: 'c', q8: 'b', q9: 'c', q10: 'c'
+            };
+
+            let allCorrect = true;
+            let allAnswered = true;
+
+            for (let i = 1; i <= 10; i++) {
+                const questionName = `q${i}`;
+                const selectedAnswer = document.querySelector(`input[name="${questionName}"]:checked`);
+                const questionElement = document.querySelector(`input[name="${questionName}"]`).closest('.question');
+
+                if (selectedAnswer) {
+                    if (selectedAnswer.value === correctAnswers[questionName]) {
+                        questionElement.classList.remove('incorrect');
+                    } else {
+                        questionElement.classList.add('incorrect');
+                        allCorrect = false;
+                    }
+                } else {
+                    questionElement.classList.add('incorrect');
+                    allCorrect = false;
+                    allAnswered = false;
+                }
+            }
+
+            const successMessage = document.getElementById('successMessage');
+
+            if (!allAnswered) {
+                alert("Please answer all questions before checking your answers.");
+            } else if (allCorrect) {
+                successMessage.style.display = 'block';
+            } else {
+                successMessage.style.display = 'none';
+                alert("Some answers are incorrect. The incorrect questions are marked in red. Please try again!");
+            }
+        }
+    </script>
+</body>
+</html>
