@@ -52,11 +52,11 @@
             background-color: #28a745;
         }
         .activity-button.listening {
-            background-color: #ffc107; /* Golden Yellow */
-            color: black; /* Black text for better contrast */
+            background-color: #ffc107;
+            color: black;
         }
         .activity-button.reading {
-            background-color: #dc3545; /* Red */
+            background-color: #dc3545;
         }
     </style>
 </head>
@@ -65,10 +65,10 @@
         <h1>Choose Your Activity</h1>
         <p>Please select the type of activity you want to do:</p>
         <div class="activity-grid">
-            <button class="activity-button vocabulary" onclick="selectActivity('V')">Vocabulary</button>
-            <button class="activity-button grammar" onclick="selectActivity('G')">Grammar</button>
-            <button class="activity-button listening" onclick="selectActivity('L')">Listening</button>
-            <button class="activity-button reading" onclick="selectActivity('R')">Reading</button>
+            <button class="activity-button vocabulary" onclick="selectActivity('v')">Vocabulary</button>
+            <button class="activity-button grammar" onclick="selectActivity('g')">Grammar</button>
+            <button class="activity-button listening" onclick="selectActivity('l')">Listening</button>
+            <button class="activity-button reading" onclick="selectActivity('r')">Reading</button>
         </div>
     </div>
 
@@ -81,20 +81,16 @@
             // Extract the level, week, and day from the filename
             const match = currentFile.match(/^(\w+)(activity_options_w\d+d\d+)\.html$/);
 
-            // Debugging statements
-            console.log("Current File:", currentFile);
-            console.log("Match:", match);
-
             if (!match) {
                 alert('Filename format is incorrect!');
                 return;
             }
 
             const level = match[1];
-            const weekDay = match[2].replace('activity_options_', '');
+            const weekDay = match[2];
 
             // Construct the new filename
-            const filename = `${level}${activityKey}${weekDay}.html`;
+            const filename = `${level}${weekDay}${activityKey}1.html`;
 
             console.log("Redirecting to:", filename);  // Debugging statement
             window.location.href = filename;

@@ -1,4 +1,7 @@
-<!DOCTYPE html>
+# Python script to generate 24 HTML files based on user input for the level
+
+# Template HTML content
+html_content = '''<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -97,4 +100,16 @@
         }
     </script>
 </body>
-</html>
+</html>'''
+
+def create_html_files(level):
+    for week in range(1, 13):
+        for day in range(1, 3):
+            filename = f"{level}activity_options_w{week}d{day}.html"
+            with open(filename, 'w') as file:
+                file.write(html_content)
+            print(f"Created file: {filename}")
+
+if __name__ == "__main__":
+    level = input("Enter the level (e.g., A1, B2): ")
+    create_html_files(level)
