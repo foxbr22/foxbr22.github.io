@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Listening Comprehension Exercise - Day 2</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #b3d9ff;
+        }
+        .container {
+            background-color: #e6f3ff;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        h1 {
+            color: #2c3e50;
+            text-align: center;
+        }
+        .question {
+            margin-bottom: 20px;
+        }
+        .options label {
+            display: block;
+            margin-bottom: 10px;
+        }
+        .button {
+            display: inline-block;
+            background-color: #2ecc71;
+            color: #fff;
+            padding: 10px 20px;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+            border: none;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        .button:hover {
+            background-color: #27ae60;
+        }
+        .incorrect {
+            color: red;
+        }
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(0,0,0,0.4);
+        }
+        .modal-content {
+            background-color: #fefefe;
+            margin: 15% auto;
+            padding: 20px;
+            border: 1px solid #888;
+            width: 80%;
+            max-width: 500px;
+            border-radius: 5px;
+            text-align: center;
+        }
+        .close-button {
+            color: #aaa;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+        }
+        .close-button:hover,
+        .close-button:focus {
+            color: black;
+            text-decoration: none;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Listening Comprehension Exercise</h1>
+
+        <p>You are going to listen to an audio conversation between Ana and Maria. Listen to all the audio one time. We can only hear Ana. You will play Maria's part. Listen to it a second time. Select the best answers for the dialogue during the pauses.</p>
+
+        <audio controls>
+            <source src="A2activity_options_w1d2l1.mp3" type="audio/mpeg">
+            Your browser does not support the audio element.
+        </audio>
+
+        <div id="questions">
+            <div class="question">
+                <p>1. First pause</p>
+                <div class="options">
+                    <label><input type="radio" name="q1" value="a"> a) Ana! Long time, no see!</label>
+                    <label><input type="radio" name="q1" value="b"> b) Ana! Thank you for asking!</label>
+                    <label><input type="radio" name="q1" value="c"> c) I'm well, what about you?</label>
+                </div>
+            </div>
+
+            <div class="question">
+                <p>2. Second pause</p>
+                <div class="options">
+                    <label><input type="radio" name="q2" value="a"> a) I don't know.</label>
+                    <label><input type="radio" name="q2" value="b"> b) Pretty good, thanks.</label>
+                    <label><input type="radio" name="q2" value="c"> c) What do you mean?</label>
+                </div>
+            </div>
+
+            <div class="question">
+                <p>3. Third pause</p>
+                <div class="options">
+                    <label><input type="radio" name="q3" value="a"> a) I don't work.</label>
+                    <label><input type="radio" name="q3" value="b"> b) I'm looking for a job.</label>
+                    <label><input type="radio" name="q3" value="c"> c) Busy but rewarding.</label>
+                </div>
+            </div>
+
+            <div class="question">
+                <p>4. Fourth pause</p>
+                <div class="options">
+                    <label><input type="radio" name="q4" value="a"> a) I hate projects.</label>
+                    <label><input type="radio" name="q4" value="b"> b) Yes, a few.</label>
+                    <label><input type="radio" name="q4" value="c"> c) No, not really.</label>
+                </div>
+            </div>
+
+            <div class="question">
+                <p>5. Fifth pause</p>
+                <div class="options">
+                    <label><input type="radio" name="q5" value="a"> a) What's marketing?</label>
+                    <label><input type="radio" name="q5" value="b"> b) Yes, still there.</label>
+                    <label><input type="radio" name="q5" value="c"> c) I never worked in marketing.</label>
+                </div>
+            </div>
+
+            <div class="question">
+                <p>6. Sixth pause</p>
+                <div class="options">
+                    <label><input type="radio" name="q6" value="a"> a) Sleeping all day.</label>
+                    <label><input type="radio" name="q6" value="b"> b) Hiking with friends.</label>
+                    <label><input type="radio" name="q6" value="c"> c) Working overtime.</label>
+                </div>
+            </div>
+
+            <div class="question">
+                <p>7. Seventh pause</p>
+                <div class="options">
+                    <label><input type="radio" name="q7" value="a"> a) In my backyard.</label>
+                    <label><input type="radio" name="q7" value="b"> b) Blue Ridge Mountains.</label>
+                    <label><input type="radio" name="q7" value="c"> c) Nowhere special.</label>
+                </div>
+            </div>
+
+            <div class="question">
+                <p>8. Eighth pause</p>
+                <div class="options">
+                    <label><input type="radio" name="q8" value="a"> a) Only when forced.</label>
+                    <label><input type="radio" name="q8" value="b"> b) Almost every weekend.</label>
+                    <label><input type="radio" name="q8" value="c"> c) Never.</label>
+                </div>
+            </div>
+
+            <div class="question">
+                <p>9. Ninth pause</p>
+                <div class="options">
+                    <label><input type="radio" name="q9" value="a"> a) You definitely should.</label>
+                    <label><input type="radio" name="q9" value="b"> b) Maybe, if you're lucky.</label>
+                    <label><input type="radio" name="q9" value="c"> c) I don't think so.</label>
+                </div>
+            </div>
+
+            <div class="question">
+                <p>10. Tenth pause</p>
+                <div class="options">
+                    <label><input type="radio" name="q10" value="a"> a) Thanks, you too!</label>
+                    <label><input type="radio" name="q10" value="b"> b) No, I won't.</label>
+                    <label><input type="radio" name="q10" value="c"> c) I don't hike.</label>
+                </div>
+            </div>
+        </div>
+
+        <button onclick="checkAnswers()" class="button">Check Answers</button>
+
+        <a href="A2activity_options_w1d2.html" class="button">Back to Main Page</a>
+    </div>
+
+    <div id="resultModal" class="modal">
+        <div class="modal-content">
+            <span class="close-button" onclick="closeModal()">&times;</span>
+            <p id="modalMessage"></p>
+            <button onclick="closeModal()" class="button">OK</button>
+        </div>
+    </div>
+
+    <script>
+        function checkAnswers() {
+            const correctAnswers = {
+                q1: 'a', q2: 'b', q3: 'c', q4: 'b', q5: 'b',
+                q6: 'b', q7: 'b', q8: 'b', q9: 'a', q10: 'a'
+            };
+
+            let incorrectCount = 0;
+
+            for (let i = 1; i <= 10; i++) {
+                const questionName = 'q' + i;
+                const selectedAnswer = document.querySelector(`input[name="${questionName}"]:checked`);
+                const questionDiv = document.querySelector(`input[name="${questionName}"]`).closest('.question');
+
+                if (!selectedAnswer || selectedAnswer.value !== correctAnswers[questionName]) {
+                    questionDiv.classList.add('incorrect');
+                    incorrectCount++;
+                } else {
+                    questionDiv.classList.remove('incorrect');
+                }
+            }
+
+            const modal = document.getElementById('resultModal');
+            const modalMessage = document.getElementById('modalMessage');
+
+            if (incorrectCount === 0) {
+                modalMessage.innerHTML = "Great job! You've completed the listening comprehension exercise!";
+            } else {
+                modalMessage.innerHTML = `You got ${incorrectCount} question${incorrectCount > 1 ? 's' : ''} wrong. Try again!`;
+            }
+
+            modal.style.display = "block";
+        }
+
+        function closeModal() {
+            document.getElementById('resultModal').style.display = "none";
+        }
+
+        // Close the modal if the user clicks outside of it
+        window.onclick = function(event) {
+            const modal = document.getElementById('resultModal');
+            if (event.target == modal) {
+                modal.style.display = "none";
+            }
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reading Comprehension: A Party Conversation</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 20px;
+            background-color: #f0f8ff;
+            color: #333;
+        }
+        .container {
+            max-width: 800px;
+            margin: auto;
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 0 20px rgba(0,0,0,0.1);
+        }
+        h1, h2 {
+            color: #2c3e50;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        .dialogue {
+            background-color: #ecf0f1;
+            border-left: 5px solid #3498db;
+            padding: 20px;
+            margin-bottom: 30px;
+            border-radius: 5px;
+        }
+        .dialogue p {
+            margin: 10px 0;
+        }
+        .dialogue strong {
+            color: #2980b9;
+        }
+        .question {
+            background-color: #f9f9f9;
+            border: 1px solid #ddd;
+            padding: 15px;
+            margin-bottom: 20px;
+            border-radius: 5px;
+            transition: all 0.3s ease;
+        }
+        .question:hover {
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        .options {
+            margin-left: 20px;
+        }
+        .options div {
+            margin: 10px 0;
+        }
+        .button {
+            display: inline-block;
+            background-color: #3498db;
+            color: white;
+            padding: 12px 24px;
+            text-align: center;
+            text-decoration: none;
+            font-size: 16px;
+            border-radius: 5px;
+            margin-top: 20px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            border: none;
+        }
+        .button:hover {
+            background-color: #2980b9;
+        }
+        #result {
+            margin-top: 20px;
+            font-weight: bold;
+            text-align: center;
+            font-size: 18px;
+        }
+        .correct {
+            color: #27ae60;
+        }
+        .incorrect {
+            color: #c0392b;
+        }
+        .nav-buttons {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 30px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>📚 Reading Comprehension: A Party Conversation</h1>
+        
+        <div class="dialogue">
+            <p><strong>Emma:</strong> Hey, John! Long time no see!</p>
+            <p><strong>John:</strong> Emma! It's been ages. How have you been?</p>
+            <p><strong>Emma:</strong> I've been great, thanks. Busy with work and all. How about you?</p>
+            <p><strong>John:</strong> Same here. Work has been keeping me on my toes. By the way, do you know Sarah? She's the host of the party.</p>
+            <p><strong>Emma:</strong> Yes, I do! We worked together on a project last year. Have you met her yet?</p>
+            <p><strong>John:</strong> Not yet. I was just about to go find her and say hello. Want to come with me?</p>
+            <p><strong>Emma:</strong> Sure, let's go. It's always nice to catch up with her.</p>
+            <p><strong>John:</strong> Absolutely. So, any exciting plans for the weekend?</p>
+            <p><strong>Emma:</strong> Just relaxing and maybe catching up on some reading. You?</p>
+            <p><strong>John:</strong> Sounds nice. I'm thinking of going hiking if the weather is good.</p>
+            <p><strong>Emma:</strong> That sounds fun! I should try that sometime. Anyway, let's go find Sarah.</p>
+        </div>
+
+        <h2>🤔 Comprehension Questions</h2>
+        <div id="questions"></div>
+
+        <button class="button" onclick="checkAnswers()">Check Answers</button>
+        <div id="result"></div>
+
+        <div class="nav-buttons">
+            <a href="A2activity_options_w1d2.html" class="button">Back to Main Page</a>
+        </div>
+    </div>
+
+    <script>
+        const questions = [
+            {
+                question: "Who is the first person Emma sees at the party?",
+                options: ["Sarah", "John", "Peter", "Mary"],
+                correct: 1
+            },
+            {
+                question: "What has been keeping John busy?",
+                options: ["Family", "Work", "Traveling", "Studying"],
+                correct: 1
+            },
+            {
+                question: "How do Emma and Sarah know each other?",
+                options: ["They are neighbors", "They went to school together", "They worked on a project together", "They met at another party"],
+                correct: 2
+            },
+            {
+                question: "What is John planning to do over the weekend?",
+                options: ["Relax and read", "Go hiking", "Visit family", "Attend another party"],
+                correct: 1
+            },
+            {
+                question: "What does Emma plan to do over the weekend?",
+                options: ["Go hiking", "Relax and catch up on reading", "Visit friends", "Work on a project"],
+                correct: 1
+            },
+            {
+                question: "Who is the host of the party?",
+                options: ["Emma", "John", "Sarah", "Mary"],
+                correct: 2
+            },
+            {
+                question: "Why does John want to find Sarah at the party?",
+                options: ["To say hello", "To discuss work", "To ask about her weekend plans", "To introduce Emma to her"],
+                correct: 0
+            },
+            {
+                question: "What does Emma consider trying sometime?",
+                options: ["Relaxing", "Reading", "Hiking", "Working on a project"],
+                correct: 2
+            }
+        ];
+
+        function displayQuestions() {
+            const questionsDiv = document.getElementById('questions');
+            questions.forEach((q, index) => {
+                const questionDiv = document.createElement('div');
+                questionDiv.className = 'question';
+                questionDiv.innerHTML = `
+                    <p><strong>Q${index + 1}:</strong> ${q.question}</p>
+                    <div class="options">
+                        ${q.options.map((option, i) => `
+                            <div>
+                                <input type="radio" name="q${index}" id="q${index}o${i}" value="${i}">
+                                <label for="q${index}o${i}">${option}</label>
+                            </div>
+                        `).join('')}
+                    </div>
+                `;
+                questionsDiv.appendChild(questionDiv);
+            });
+        }
+
+        function checkAnswers() {
+            let score = 0;
+            questions.forEach((q, index) => {
+                const selectedOption = document.querySelector(`input[name="q${index}"]:checked`);
+                const questionDiv = document.querySelectorAll('.question')[index];
+                if (selectedOption) {
+                    if (parseInt(selectedOption.value) === q.correct) {
+                        score++;
+                        questionDiv.classList.add('correct');
+                        questionDiv.classList.remove('incorrect');
+                    } else {
+                        questionDiv.classList.add('incorrect');
+                        questionDiv.classList.remove('correct');
+                    }
+                } else {
+                    questionDiv.classList.add('incorrect');
+                    questionDiv.classList.remove('correct');
+                }
+            });
+            document.getElementById('result').innerHTML = `You got ${score} out of ${questions.length} correct!`;
+        }
+
+        displayQuestions();
+    </script>
+</body>
+</html>

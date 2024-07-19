@@ -58,20 +58,6 @@
         .activity-button.reading {
             background-color: #dc3545;
         }
-        .back-button {
-            margin-top: 2rem;
-            padding: 1rem;
-            font-size: 1.2rem;
-            color: white;
-            background-color: #6c757d;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-            transition: background-color 0.3s ease;
-        }
-        .back-button:hover {
-            opacity: 0.8;
-        }
     </style>
 </head>
 <body>
@@ -84,59 +70,30 @@
             <button class="activity-button listening" onclick="selectActivity('l')">Listening</button>
             <button class="activity-button reading" onclick="selectActivity('r')">Reading</button>
         </div>
-        <button class="back-button" onclick="goBack()">Back</button>
     </div>
+
     <script>
         function selectActivity(activityKey) {
             // Get the current filename
             const path = window.location.pathname;
             const currentFile = path.substring(path.lastIndexOf('/') + 1);
-            
-            // Updated regex to match the current filename format
-            const match = currentFile.match(/^(\w+activity_options_w\d+d\d+)\.html$/);
-            
-            // Debug information
-            console.log("Current File:", currentFile);
-            console.log("Match:", match);
-            
-            if (!match) {
-                alert('Filename format is incorrect!');
-                return;
-            }
-            
-            const baseFilename = match[1];
-            
-            // Construct the new filename with the correct format
-            const filename = `${baseFilename}${activityKey}1.html`;
-            
-            console.log("Redirecting to:", filename);
-            window.location.href = filename;
-        }
 
-        function goBack() {
-            // Get the current filename
-            const path = window.location.pathname;
-            const currentFile = path.substring(path.lastIndexOf('/') + 1);
-            
-            // Extract the first two letters to construct the back filename
-            const match = currentFile.match(/^(\w\w)activity_options_w\d+d\d+\.html$/);
-            
-            // Debug information
-            console.log("Current File:", currentFile);
-            console.log("Match:", match);
-            
+            // Extract the level, week, and day from the filename
+            const match = currentFile.match(/^(\w+)(activity_options_w\d+d\d+)\.html$/);
+
             if (!match) {
                 alert('Filename format is incorrect!');
                 return;
             }
-            
-            const base = match[1];
-            
-            // Construct the back filename
-            const backFilename = `${base}_week.html`;
-            
-            console.log("Redirecting to:", backFilename);
-            window.location.href = backFilename;
+
+            const level = match[1];
+            const weekDay = match[2];
+
+            // Construct the new filename
+            const filename = `${level}${weekDay}${activityKey}1.html`;
+
+            console.log("Redirecting to:", filename);  // Debugging statement
+            window.location.href = filename;
         }
     </script>
 </body>

@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grammar: Adjectives, Adverbs, and 'Pretty' Usage</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f4f4f4;
+        }
+        .container {
+            background-color: #fff;
+            border-radius: 8px;
+            padding: 20px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        h1, h2, h3 {
+            color: #2c3e50;
+        }
+        .explanation {
+            background-color: #e8f4f8;
+            border-left: 5px solid #3498db;
+            padding: 10px;
+            margin-bottom: 20px;
+        }
+        .example {
+            margin-left: 20px;
+            padding: 5px;
+            background-color: #f0f0f0;
+            border-left: 3px solid #3498db;
+        }
+        .exercise {
+            background-color: #f0f0f0;
+            border-radius: 8px;
+            padding: 15px;
+            margin-top: 20px;
+        }
+        .question {
+            margin-bottom: 10px;
+        }
+        button, .button {
+            background-color: #3498db;
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            border-radius: 5px;
+            cursor: pointer;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            transition: background-color 0.3s ease;
+        }
+        button:hover, .button:hover {
+            background-color: #2980b9;
+        }
+        #result {
+            margin-top: 15px;
+            font-weight: bold;
+        }
+        .incorrect {
+            color: red;
+        }
+        .nav-buttons {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Adjectives, Adverbs, and 'Pretty' Usage</h1>
+        
+        <div class="explanation">
+            <h2>Adjectives and Adverbs</h2>
+            <h3>Adjectives</h3>
+            <p>Adjectives are words that describe or modify nouns (people, places, things, or ideas).</p>
+            <div class="example">
+                Examples: <br>
+                - The <em>tall</em> tree<br>
+                - A <em>beautiful</em> sunset<br>
+                - An <em>interesting</em> book
+            </div>
+
+            <h3>Adverbs</h3>
+            <p>Adverbs are words that modify verbs, adjectives, or other adverbs. They often answer questions like how, when, where, or to what extent.</p>
+            <div class="example">
+                Examples: <br>
+                - She sings <em>beautifully</em><br>
+                - He arrived <em>late</em><br>
+                - The car moves <em>very</em> fast
+            </div>
+        </div>
+
+        <div class="explanation">
+            <h2>Understanding 'Pretty'</h2>
+            <p><strong>pretty</strong> = beautiful (adjective)</p>
+            <p><strong>pretty + noun</strong> = a pretty little house.</p>
+            <p><strong>pretty + adjective</strong> = very (adverb)</p>
+            <p>Example: That's pretty good. (That's very good.)</p>
+
+            <h3>Examples:</h3>
+            <p>As an adjective (meaning "beautiful"):</p>
+            <div class="example">
+                1. She has a pretty smile.<br>
+                2. The garden looks pretty in springtime.
+            </div>
+
+            <p>As an adverb (meaning "very"):</p>
+            <div class="example">
+                3. The exam was pretty difficult.<br>
+                4. I'm pretty sure we've met before.
+            </div>
+        </div>
+
+        <div class="exercise">
+            <h2>Practice Exercise</h2>
+            <p>Determine whether 'pretty' means 'very' or 'beautiful' in each sentence:</p>
+            <div id="questions"></div>
+            <button onclick="checkAnswers()">Check Answers</button>
+            <div id="result"></div>
+        </div>
+
+        <div class="nav-buttons">
+            <a href="A2activity_options_w1d2.html" class="button">Back</a>
+        </div>
+    </div>
+
+    <script>
+        const sentences = [
+            { text: "She has a pretty face.", answer: "beautiful" },
+            { text: "The test was pretty difficult.", answer: "very" },
+            { text: "That's a pretty flower in your garden.", answer: "beautiful" },
+            { text: "I'm pretty sure about the answer.", answer: "very" },
+            { text: "The view from the mountain is pretty spectacular.", answer: "very" },
+            { text: "She wore a pretty dress to the party.", answer: "beautiful" },
+            { text: "The situation got pretty tense during the meeting.", answer: "very" },
+            { text: "Look at that pretty butterfly!", answer: "beautiful" },
+            { text: "I'm pretty tired after the long hike.", answer: "very" },
+            { text: "The new employee has a pretty impressive resume.", answer: "very" },
+            { text: "The sunset created a pretty scene on the beach.", answer: "beautiful" },
+            { text: "The project is progressing pretty well.", answer: "very" },
+            { text: "She has a pretty singing voice.", answer: "beautiful" },
+            { text: "The restaurant is pretty expensive.", answer: "very" },
+            { text: "It was a pretty day.", answer: "beautiful" },
+            { text: "I'm pretty excited about the upcoming concert.", answer: "very" },
+            { text: "The garden looks pretty in spring.", answer: "beautiful" },
+            { text: "The new software is pretty user-friendly.", answer: "very" },
+            { text: "She gave a pretty convincing argument.", answer: "very" },
+            { text: "The artist painted a pretty landscape.", answer: "beautiful" }
+        ];
+
+        function displayQuestions() {
+            const questionsDiv = document.getElementById('questions');
+            sentences.forEach((sentence, index) => {
+                const questionHtml = `
+                    <div class="question" id="question${index}">
+                        <p>${index + 1}. ${sentence.text}</p>
+                        <input type="radio" name="q${index}" value="beautiful" id="q${index}b"> <label for="q${index}b">Beautiful</label>
+                        <input type="radio" name="q${index}" value="very" id="q${index}v"> <label for="q${index}v">Very</label>
+                    </div>
+                `;
+                questionsDiv.innerHTML += questionHtml;
+            });
+        }
+
+        function checkAnswers() {
+            let score = 0;
+            let feedback = '';
+            sentences.forEach((sentence, index) => {
+                const questionDiv = document.getElementById(`question${index}`);
+                const selectedAnswer = document.querySelector(`input[name="q${index}"]:checked`);
+                questionDiv.classList.remove('incorrect');
+                if (selectedAnswer) {
+                    if (selectedAnswer.value === sentence.answer) {
+                        score++;
+                        feedback += `Question ${index + 1}: Correct!<br>`;
+                    } else {
+                        feedback += `Question ${index + 1}: Incorrect. The correct answer is "${sentence.answer}".<br>`;
+                        questionDiv.classList.add('incorrect');
+                    }
+                } else {
+                    feedback += `Question ${index + 1}: No answer selected.<br>`;
+                    questionDiv.classList.add('incorrect');
+                }
+            });
+            document.getElementById('result').innerHTML = `You got ${score} out of ${sentences.length} correct.<br>${feedback}`;
+        }
+
+        displayQuestions();
+    </script>
+</body>
+</html>
