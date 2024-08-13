@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Saturday Morning Routine - Reading Comprehension</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 20px;
+            background-color: #b3d9ff;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background-color: #e6f3ff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        h1 {
+            color: #333;
+        }
+        .reading-text {
+            background-color: #ffffff;
+            padding: 15px;
+            border-radius: 5px;
+            margin-bottom: 20px;
+        }
+        .question {
+            margin-bottom: 20px;
+        }
+        .options label {
+            display: block;
+            margin-bottom: 5px;
+        }
+        .button {
+            display: inline-block;
+            background-color: #2ecc71;
+            color: white;
+            padding: 10px 20px;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+            margin-right: 10px;
+            border: none;
+            cursor: pointer;
+        }
+        .button:hover {
+            background-color: #27ae60;
+        }
+        .navigation {
+            margin-top: 20px;
+        }
+        .incorrect {
+            color: red;
+        }
+        #resultMessage {
+            margin-top: 20px;
+            font-weight: bold;
+            font-size: 1.2em;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Saturday Morning Routine - Reading Comprehension</h1>
+        
+        <div class="reading-text">
+            <h2>Saturday Morning Routine</h2>
+            <p>Every Saturday, I start my day with some home chores. First, I <strong>do the laundry</strong>; it's become a ritual to wash all the clothes from the week. While the washing machine is running, I <strong>do the dishes</strong> left from breakfast. I also <strong>do the vacuuming</strong> to keep the floors clean. One of the chores I don't particularly enjoy is <strong>doing the dusting</strong>, but it's necessary to keep the house fresh.</p>
+            <p>After finishing these tasks, I take a moment to <strong>make the bed</strong>. Even though it's a simple task, it makes the bedroom look neat and organized. I love the feeling of accomplishment after completing these chores. Once everything is done, I can relax.</p>
+            <p>This Saturday is special because we're <strong>having a party</strong> in the evening. We've invited friends over to celebrate a birthday. We're planning to have a great time with good food, music, and lots of laughter. Hosting a party means a bit of extra work, but it's always worth it. I'll <strong>make some snacks</strong> and drinks, and we've already <strong>made plans</strong> for games and activities to keep everyone entertained. It's going to be a fantastic day, filled with both productive chores and fun celebrations.</p>
+        </div>
+
+        <div id="questions">
+            <!-- Questions will be dynamically inserted here -->
+        </div>
+
+        <button id="checkAnswers" class="button">Check Answers</button>
+
+        <div id="resultMessage"></div>
+
+        <div class="navigation">
+            <a href="A2activity_options_w2d1.html" class="button">Back to Main Page</a>
+        </div>
+    </div>
+
+    <script>
+        const questions = [
+            {
+                question: "What is the first chore mentioned that the person does every Saturday?",
+                options: ["Doing the dishes", "Doing the laundry", "Making the bed", "Dusting"],
+                answer: "Doing the laundry"
+            },
+            {
+                question: "What ritual does the person have related to laundry?",
+                options: ["Folding the clothes", "Ironing the clothes", "Washing all the clothes from the week", "Sorting the clothes by color"],
+                answer: "Washing all the clothes from the week"
+            },
+            {
+                question: "Which chore does the person not particularly enjoy, but still finds necessary?",
+                options: ["Vacuuming", "Dusting", "Doing the dishes", "Making the bed"],
+                answer: "Dusting"
+            },
+            {
+                question: "Why does the person make the bed, even though it's a simple task?",
+                options: ["To keep the room warm", "To make the bedroom look neat and organized", "To help them sleep better", "To prevent wrinkles in the sheets"],
+                answer: "To make the bedroom look neat and organized"
+            },
+            {
+                question: "What is special about this particular Saturday?",
+                options: ["They are doing extra chores", "They are having a party in the evening", "They are going on a trip", "They are visiting family"],
+                answer: "They are having a party in the evening"
+            },
+            {
+                question: "What are they planning to celebrate during the party?",
+                options: ["A graduation", "A birthday", "An anniversary", "A holiday"],
+                answer: "A birthday"
+            },
+            {
+                question: "What tasks are involved in preparing for the party?",
+                options: ["Buying new furniture", "Making snacks and drinks", "Cleaning the garage", "Painting the walls"],
+                answer: "Making snacks and drinks"
+            },
+            {
+                question: "How does the person feel after completing the home chores?",
+                options: ["Tired and exhausted", "Accomplished and relaxed", "Frustrated and annoyed", "Bored and uninterested"],
+                answer: "Accomplished and relaxed"
+            },
+            {
+                question: "What kind of activities have they planned for the party to keep guests entertained?",
+                options: ["Watching a movie", "Playing games", "Listening to a lecture", "Going for a walk"],
+                answer: "Playing games"
+            },
+            {
+                question: "Why does the person think the extra work for the party is worth it?",
+                options: ["Because it helps them save money", "Because they enjoy cleaning", "Because hosting a party brings good food, music, and lots of laughter", "Because it allows them to show off their home"],
+                answer: "Because hosting a party brings good food, music, and lots of laughter"
+            }
+        ];
+
+        const questionsContainer = document.getElementById('questions');
+        questions.forEach((q, index) => {
+            const questionDiv = document.createElement('div');
+            questionDiv.className = 'question';
+            questionDiv.innerHTML = `
+                <p><strong>Question ${index + 1}:</strong> ${q.question}</p>
+                <div class="options">
+                    ${q.options.map((option, i) => `
+                        <label>
+                            <input type="radio" name="q${index}" value="${option}">
+                            ${option}
+                        </label>
+                    `).join('')}
+                </div>
+            `;
+            questionsContainer.appendChild(questionDiv);
+        });
+
+        document.getElementById('checkAnswers').addEventListener('click', () => {
+            let correctCount = 0;
+            questions.forEach((q, index) => {
+                const selected = document.querySelector(`input[name="q${index}"]:checked`);
+                const questionDiv = document.querySelectorAll('.question')[index];
+                if (selected && selected.value === q.answer) {
+                    correctCount++;
+                    questionDiv.classList.remove('incorrect');
+                } else {
+                    questionDiv.classList.add('incorrect');
+                }
+            });
+
+            const resultMessage = document.getElementById('resultMessage');
+            if (correctCount === questions.length) {
+                resultMessage.textContent = "Congratulations! You got all the answers correct! Great job!";
+                resultMessage.style.color = "green";
+            } else {
+                resultMessage.textContent = `You got ${correctCount} out of ${questions.length} correct. Keep practicing!`;
+                resultMessage.style.color = "blue";
+            }
+        });
+    </script>
+</body>
+</html>

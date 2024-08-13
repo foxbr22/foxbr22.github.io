@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Technology Phrasal Verbs</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #b3d9ff;
+            margin: 0;
+            padding: 20px;
+        }
+        .container {
+            background-color: #e6f3ff;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        h1, h2 {
+            color: #333;
+        }
+        .phrasal-verb {
+            margin-bottom: 15px;
+        }
+        .example {
+            font-style: italic;
+            color: #666;
+        }
+        .words {
+            display: flex;
+            justify-content: space-around;
+            margin-bottom: 20px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        td {
+            padding: 10px;
+            border: 1px solid #ccc;
+        }
+        .blank {
+            width: 100px;
+            text-align: center;
+        }
+        .button {
+            display: inline-block;
+            background-color: #2ecc71;
+            color: white;
+            padding: 10px 20px;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+            margin-top: 20px;
+        }
+        .button:hover {
+            background-color: #27ae60;
+        }
+        #result {
+            font-weight: bold;
+            margin-top: 20px;
+        }
+        .incorrect {
+            color: red;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Technology Phrasal Verbs</h1>
+
+        <h2>Explanations</h2>
+        <div class="phrasal-verb">
+            <strong>Log in</strong> - To access a computer system or online account by entering a username and password.
+            <p class="example">Example: "Please log in to your account to view the meeting details."</p>
+        </div>
+
+        <div class="phrasal-verb">
+            <strong>Log out</strong> - To exit a computer system or online account.
+            <p class="example">Example: "Don't forget to log out of your account when you're finished."</p>
+        </div>
+
+        <div class="phrasal-verb">
+            <strong>Sign up</strong> - To register or create an account on a website or service.
+            <p class="example">Example: "You need to sign up for the webinar by filling out the form."</p>
+        </div>
+
+        <div class="phrasal-verb">
+            <strong>Turn up</strong> - To increase the volume.
+            <p class="example">Example: "Can you turn up the volume? I can't hear you."</p>
+        </div>
+
+        <div class="phrasal-verb">
+            <strong>Break up</strong> - When the audio or video quality becomes poor and intermittent during a call.
+            <p class="example">Example: "Your voice is breaking up; can you repeat that?"</p>
+        </div>
+
+        <h2>Cloze Activity</h2>
+        <div class="words">
+            <span>1. log in</span>
+            <span>2. log out</span>
+            <span>3. sign up</span>
+            <span>4. turn up</span>
+            <span>5. breaking up</span>
+        </div>
+
+        <table>
+            <tr>
+                <td>1. I need to <select class="blank">
+                    <option value=""></option>
+                    <option value="log in">log in</option>
+                    <option value="log out">log out</option>
+                    <option value="sign up">sign up</option>
+                </select> to check my emails.</td>
+            </tr>
+            <tr>
+                <td>2. Can you <select class="blank">
+                    <option value=""></option>
+                    <option value="turn up">turn up</option>
+                    <option value="log in">log in</option>
+                    <option value="sign up">sign up</option>
+                </select> the volume? I can barely hear the speaker.</td>
+            </tr>
+            <tr>
+                <td>3. I'm sorry, but your voice is <select class="blank">
+                    <option value=""></option>
+                    <option value="breaking up">breaking up</option>
+                    <option value="log out">log out</option>
+                    <option value="turn up">turn up</option>
+                </select>. Can you move to a better location?</td>
+            </tr>
+            <tr>
+                <td>4. Don't forget to <select class="blank">
+                    <option value=""></option>
+                    <option value="log out">log out</option>
+                    <option value="log in">log in</option>
+                    <option value="sign up">sign up</option>
+                </select> of your account when you're done using the public computer.</td>
+            </tr>
+            <tr>
+                <td>5. We need to <select class="blank">
+                    <option value=""></option>
+                    <option value="sign up">sign up</option>
+                    <option value="log in">log in</option>
+                    <option value="turn up">turn up</option>
+                </select> for the online course before the deadline.</td>
+            </tr>
+        </table>
+
+        <button class="button" onclick="checkAnswers()">Check Answers</button>
+        <div id="result"></div>
+
+        <a href="A2activity_options_w2d2.html" class="button">Back to Main Page</a>
+    </div>
+
+    <script>
+        function checkAnswers() {
+            const correctAnswers = ['log in', 'turn up', 'breaking up', 'log out', 'sign up'];
+            const selects = document.querySelectorAll('.blank');
+            let score = 0;
+
+            selects.forEach((select, index) => {
+                if (select.value === correctAnswers[index]) {
+                    score++;
+                    select.classList.remove('incorrect');
+                } else {
+                    select.classList.add('incorrect');
+                }
+            });
+
+            let resultMessage = `You got ${score} out of 5 correct.<br>`;
+            if (score < 5) {
+                resultMessage += 'Incorrect answers are marked in red. Please try again.';
+            } else {
+                resultMessage += 'Great job! All answers are correct.';
+            }
+
+            document.getElementById('result').innerHTML = resultMessage;
+        }
+    </script>
+</body>
+</html>

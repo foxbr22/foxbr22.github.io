@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Present Simple Tense</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f4f4f4;
+        }
+        h1, h2 {
+            color: #2c3e50;
+        }
+        h1 {
+            border-bottom: 2px solid #3498db;
+            padding-bottom: 10px;
+        }
+        #slideContainer {
+            background-color: white;
+            border-radius: 8px;
+            padding: 20px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            margin-bottom: 20px;
+        }
+        button {
+            background-color: #27ae60;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            margin-top: 20px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 15px;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+        .example {
+            font-style: italic;
+            color: #27ae60;
+            margin-left: 20px;
+        }
+        .highlight {
+            background-color: #fffacd;
+            font-weight: bold;
+        }
+        #result {
+            font-weight: bold;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Present Simple Tense</h1>
+    <div id="slideContainer">
+        <!-- Slide content will be inserted here by JavaScript -->
+    </div>
+    <div style="display: flex; justify-content: space-between; margin-top: 20px;">
+        <button id="menuBtn" onclick="location.href='A2activity_options_w2d1.html'">Back to Menu</button>
+        <button id="backBtn">Back</button>
+        <button id="nextBtn">Next</button>
+    </div>
+    <div id="result"></div>
+
+    <script>
+        console.log("JavaScript is working!");
+
+        const slides = [
+            {
+                title: "Introduction to Present Simple",
+                content: `
+                    <ul>
+                        <li>What is it? A verb tense used to describe:
+                            <ul>
+                                <li>Regular actions</li>
+                                <li>General truths</li>
+                                <li>Facts</li>
+                            </ul>
+                        </li>
+                        <li>We'll cover:
+                            <ul>
+                                <li>How to form it (positive and negative)</li>
+                                <li>Special case: the verb "be"</li>
+                                <li>When to use it</li>
+                                <li>Examples in everyday life</li>
+                            </ul>
+                        </li>
+                    </ul>
+                `
+            },
+            {
+                title: "Present Simple - Positive Form",
+                content: `
+                    <ul>
+                        <li>For I, you, we, they: Use the base form of the verb
+                            <p class="example">Example: "I play tennis on weekends."</p>
+                        </li>
+                        <li>For he, she, it: Add -s or -es to the base form
+                            <p class="example">Example: "She plays tennis on weekends."</p>
+                        </li>
+                        <li>Remember: For verbs ending in -o, -ch, -sh, -x, -ss, add -es
+                            <p class="example">Example: "He watches TV every evening."</p>
+                        </li>
+                    </ul>
+                    <h3>Additional Rules for Third Person Singular:</h3>
+                    <ul>
+                        <li>When the verb ends in a consonant + -y:
+                            <ul>
+                                <li>Change y to i and add -es</li>
+                                <li class="example">hurry → hurr<span class="highlight">ies</span></li>
+                                <li class="example">study → stud<span class="highlight">ies</span></li>
+                                <li class="example">reply → repl<span class="highlight">ies</span></li>
+                            </ul>
+                        </li>
+                        <li>When the verb ends in a vowel + -y:
+                            <ul>
+                                <li>Just add -s</li>
+                                <li class="example">pay → pay<span class="highlight">s</span></li>
+                                <li class="example">enjoy → enjoy<span class="highlight">s</span></li>
+                            </ul>
+                        </li>
+                        <li>Irregular verbs:
+                            <ul>
+                                <li class="example">have → ha<span class="highlight">s</span></li>
+                                <li class="example">go → go<span class="highlight">es</span></li>
+                                <li class="example">do → do<span class="highlight">es</span></li>
+                                <li class="example">be → <span class="highlight">is</span></li>
+                            </ul>
+                        </li>
+                    </ul>
+                `
+            },
+            {
+                title: "Present Simple - Negative Form",
+                content: `
+                    <ul>
+                        <li>Use "do not" or "does not" + base form of the verb</li>
+                        <li>For I, you, we, they: "do not" (don't)
+                            <p class="example">Example: "I don't like spicy food."</p>
+                        </li>
+                        <li>For he, she, it: "does not" (doesn't)
+                            <p class="example">Example: "She doesn't eat meat."</p>
+                        </li>
+                        <li>Note: The main verb always stays in its base form</li>
+                    </ul>
+                `
+            },
+            {
+                title: 'Present Simple - The Verb "Be"',
+                content: `
+                    <p>"Be" is special - it doesn't follow the usual rules</p>
+                    <table>
+                        <tr>
+                            <th>Subject</th>
+                            <th>Positive</th>
+                            <th>Negative</th>
+                            <th>Contractions (Positive)</th>
+                            <th>Contractions (Negative)</th>
+                        </tr>
+                        <tr>
+                            <td>I</td>
+                            <td>am</td>
+                            <td>am not</td>
+                            <td>I'm</td>
+                            <td>I'm not</td>
+                        </tr>
+                        <tr>
+                            <td>You</td>
+                            <td>are</td>
+                            <td>are not</td>
+                            <td>You're</td>
+                            <td>You aren't</td>
+                        </tr>
+                        <tr>
+                            <td>He/She/It</td>
+                            <td>is</td>
+                            <td>is not</td>
+                            <td>He's/She's/It's</td>
+                            <td>He isn't/She isn't/It isn't</td>
+                        </tr>
+                        <tr>
+                            <td>We/You/They</td>
+                            <td>are</td>
+                            <td>are not</td>
+                            <td>We're/You're/They're</td>
+                            <td>We aren't/You aren't/They aren't</td>
+                        </tr>
+                    </table>
+                    <p class="example">Example: "I am hungry. Are you ready for lunch?"</p>
+                `
+            },
+            {
+                title: "Present Simple - General Truths and Facts",
+                content: `
+                    <p>We use present simple for:</p>
+                    <ol>
+                        <li>Scientific facts:
+                            <p class="example">"Water boils at 100°C (212°F)."</p>
+                        </li>
+                        <li>General truths about the world:
+                            <p class="example">"The Earth revolves around the Sun."</p>
+                        </li>
+                        <li>Personal facts or beliefs:
+                            <p class="example">"I believe in equality."</p>
+                            <p class="example">"She loves Italian cuisine."</p>
+                        </li>
+                    </ol>
+                `
+            },
+            {
+                title: "Present Simple - Regular and Habitual Events",
+                content: `
+                    <ul>
+                        <li>Use for actions that happen regularly or repeatedly</li>
+                        <li>Often used with frequency adverbs:
+                            <p style="margin-left: 20px;">always, usually, often, sometimes, rarely, never</p>
+                        </li>
+                    </ul>
+                    <p>Examples:</p>
+                    <ul>
+                        <li class="example">"I usually have cereal for breakfast."</li>
+                        <li class="example">"She goes to the gym three times a week."</li>
+                        <li class="example">"They never eat fast food."</li>
+                    </ul>
+                    <p><strong>Remember:</strong> "have breakfast/lunch/dinner" is more common than "eat breakfast/lunch/dinner"</p>
+                `
+            },
+            {
+                title: "Practice Quiz",
+                content: `
+                    <h2>Practice Quiz</h3>
+                    <h3>Fill in the blanks:</h3>
+                    <ol id="quizFillInBlanks"></ol>
+                    <h3>Choose the correct rule:</h3>
+                    <ol id="quizMultipleChoice"></ol>
+                    <button onclick="checkAnswers()">Check Answers</button>
+                `
+            }
+        ];
+
+        let currentSlide = 0;
+
+        function updateSlide() {
+            const slideContainer = document.getElementById('slideContainer');
+            console.log('Updating slide:', currentSlide, slides[currentSlide]);
+
+            try {
+                slideContainer.innerHTML = `
+                    <h2>${slides[currentSlide].title}</h2>
+                    ${slides[currentSlide].content}
+                `;
+                console.log('Content inserted successfully.');
+            } catch (error) {
+                console.error('Error updating slide:', error);
+                slideContainer.innerHTML = `<p>Error loading content. Please try again.</p>`;
+            }
+
+            document.getElementById('backBtn').disabled = currentSlide === 0;
+            if (currentSlide === slides.length - 1) {
+                document.getElementById('nextBtn').style.display = 'none';
+            } else {
+                document.getElementById('nextBtn').style.display = 'inline-block';
+            }
+
+            if (slides[currentSlide].title === "Practice Quiz") {
+                generateQuiz();
+            }
+        }
+
+        document.getElementById('backBtn').addEventListener('click', () => {
+            if (currentSlide > 0) {
+                currentSlide--;
+                updateSlide();
+            }
+        });
+
+        document.getElementById('nextBtn').addEventListener('click', () => {
+            if (currentSlide < slides.length - 1) {
+                currentSlide++;
+                updateSlide();
+            }
+        });
+
+        const FILL_IN_BLANKS_QUESTIONS = [
+            "Water _____ (freeze) at 0°C.",
+            "My sister _____ (be) allergic to peanuts.",
+            "We _____ (not/eat) meat. We're vegetarians.",
+            "_____ (do/you/like) spicy food?",
+            "The restaurant _____ (close) at 10 PM every night."
+        ];
+
+        const FILL_IN_BLANKS_ANSWERS = [
+            "freezes", "is", "don't eat", "Do you like", "closes"
+        ];
+
+        const MULTIPLE_CHOICE_QUESTIONS = [
+            "When a verb ends in a consonant + y, we:",
+            "When a verb ends in a vowel + y, we:"
+        ];
+
+        const MULTIPLE_CHOICE_OPTIONS = [
+            ["A) add -s", "B) add -es", "C) change y to i and add -es", "D) just add -y"],
+            ["A) add -s", "B) add -es", "C) change y to i and add -es", "D) just add -y"]
+        ];
+
+        const MULTIPLE_CHOICE_ANSWERS = ['C', 'A'];
+
+        function generateQuiz() {
+            let quizFillInBlanksHTML = '';
+            let quizMultipleChoiceHTML = '';
+            
+            FILL_IN_BLANKS_QUESTIONS.forEach((question, index) => {
+                quizFillInBlanksHTML += `<li>${question.replace('_____', `<input type="text" id="blank${index}" style="width: 100px;">`)}</li>`;
+            });
+            document.getElementById('quizFillInBlanks').innerHTML = quizFillInBlanksHTML;
+
+            MULTIPLE_CHOICE_QUESTIONS.forEach((question, i) => {
+                quizMultipleChoiceHTML += `<li>${question}<br>`;
+                MULTIPLE_CHOICE_OPTIONS[i].forEach((option, index) => {
+                    quizMultipleChoiceHTML += `<input type="radio" name="mc${i}" value="${String.fromCharCode(65 + index)}"> ${option}<br>`;
+                });
+                quizMultipleChoiceHTML += '</li>';
+            });
+            document.getElementById('quizMultipleChoice').innerHTML = quizMultipleChoiceHTML;
+        }
+
+        function checkAnswers() {
+            let allCorrect = true;
+            let result = '';
+
+            FILL_IN_BLANKS_ANSWERS.forEach((answer, index) => {
+                const userAnswer = document.getElementById(`blank${index}`).value.trim().toLowerCase();
+                if (userAnswer !== answer.toLowerCase()) {
+                    result += `Question ${index + 1}: Incorrect. The correct answer is '${answer}'.<br>`;
+                    allCorrect = false;
+                    document.getElementById(`blank${index}`).style.color = 'red';
+                } else {
+                    document.getElementById(`blank${index}`).style.color = 'green';
+                }
+            });
+
+            MULTIPLE_CHOICE_ANSWERS.forEach((answer, index) => {
+                const userAnswer = document.querySelector(`input[name="mc${index}"]:checked`)?.value;
+                if (userAnswer !== answer) {
+                    result += `Multiple Choice ${index + 1}: Incorrect. The correct answer is '${answer}'.<br>`;
+                    allCorrect = false;
+                }
+            });
+
+            if (allCorrect) {
+                result = "<span style='color: green;'>Congratulations! All answers are correct!</span>";
+            } else {
+                result = "<span style='color: red;'>Some answers are incorrect. Please review:</span><br>" + result;
+            }
+
+            document.getElementById('result').innerHTML = result;
+        }
+
+        updateSlide();
+    </script>
+</body>
+</html>

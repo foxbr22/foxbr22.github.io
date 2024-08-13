@@ -1,0 +1,503 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sports Vocabulary - ESL Activity</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #b3d9ff;
+            margin: 0;
+            padding: 20px;
+        }
+        .container {
+            background-color: #e6f3ff;
+            border-radius: 10px;
+            padding: 20px;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        h1, h2 {
+            color: #333;
+            text-align: center;
+        }
+        .slide {
+            display: none;
+        }
+        .active {
+            display: block;
+        }
+        .matching {
+            display: flex;
+            justify-content: space-between;
+        }
+        .words, .definitions {
+            width: 48%;
+        }
+        .words p, .definitions p {
+            margin: 10px 0;
+        }
+        select {
+            margin-left: 10px;
+            width: 100px;
+        }
+        button {
+            background-color: #2ecc71;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin: 4px 2px;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+        button:hover {
+            background-color: #27ae60;
+        }
+        .navigation {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 20px;
+        }
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(0,0,0,0.4);
+        }
+        .modal-content {
+            background-color: #fefefe;
+            margin: 15% auto;
+            padding: 20px;
+            border: 1px solid #888;
+            width: 80%;
+            max-width: 500px;
+            border-radius: 10px;
+            text-align: center;
+        }
+        .close {
+            color: #aaa;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+        }
+        .close:hover,
+        .close:focus {
+            color: black;
+            text-decoration: none;
+            cursor: pointer;
+        }
+        .incorrect {
+            color: red;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Sports Vocabulary</h1>
+        
+        <div id="slide1" class="slide active">
+            <h2>Match the words to their definitions</h2>
+            <div class="matching">
+                <div class="words">
+                    <p>1. Player <select id="q1">
+                        <option value="">-</option>
+                        <option value="a">a</option>
+                        <option value="b">b</option>
+                        <option value="c">c</option>
+                        <option value="d">d</option>
+                        <option value="e">e</option>
+                        <option value="f">f</option>
+                        <option value="g">g</option>
+                        <option value="h">h</option>
+                        <option value="i">i</option>
+                        <option value="j">j</option>
+                    </select></p>
+                    <p>2. Court <select id="q2">
+                        <option value="">-</option>
+                        <option value="a">a</option>
+                        <option value="b">b</option>
+                        <option value="c">c</option>
+                        <option value="d">d</option>
+                        <option value="e">e</option>
+                        <option value="f">f</option>
+                        <option value="g">g</option>
+                        <option value="h">h</option>
+                        <option value="i">i</option>
+                        <option value="j">j</option>
+                    </select></p>
+                    <p>3. Fans <select id="q3">
+                        <option value="">-</option>
+                        <option value="a">a</option>
+                        <option value="b">b</option>
+                        <option value="c">c</option>
+                        <option value="d">d</option>
+                        <option value="e">e</option>
+                        <option value="f">f</option>
+                        <option value="g">g</option>
+                        <option value="h">h</option>
+                        <option value="i">i</option>
+                        <option value="j">j</option>
+                    </select></p>
+                    <p>4. Guess what <select id="q4">
+                        <option value="">-</option>
+                        <option value="a">a</option>
+                        <option value="b">b</option>
+                        <option value="c">c</option>
+                        <option value="d">d</option>
+                        <option value="e">e</option>
+                        <option value="f">f</option>
+                        <option value="g">g</option>
+                        <option value="h">h</option>
+                        <option value="i">i</option>
+                        <option value="j">j</option>
+                    </select></p>
+                    <p>5. Coach <select id="q5">
+                        <option value="">-</option>
+                        <option value="a">a</option>
+                        <option value="b">b</option>
+                        <option value="c">c</option>
+                        <option value="d">d</option>
+                        <option value="e">e</option>
+                        <option value="f">f</option>
+                        <option value="g">g</option>
+                        <option value="h">h</option>
+                        <option value="i">i</option>
+                        <option value="j">j</option>
+                    </select></p>
+                    <p>6. Crowd <select id="q6">
+                        <option value="">-</option>
+                        <option value="a">a</option>
+                        <option value="b">b</option>
+                        <option value="c">c</option>
+                        <option value="d">d</option>
+                        <option value="e">e</option>
+                        <option value="f">f</option>
+                        <option value="g">g</option>
+                        <option value="h">h</option>
+                        <option value="i">i</option>
+                        <option value="j">j</option>
+                    </select></p>
+                    <p>7. Losing <select id="q7">
+                        <option value="">-</option>
+                        <option value="a">a</option>
+                        <option value="b">b</option>
+                        <option value="c">c</option>
+                        <option value="d">d</option>
+                        <option value="e">e</option>
+                        <option value="f">f</option>
+                        <option value="g">g</option>
+                        <option value="h">h</option>
+                        <option value="i">i</option>
+                        <option value="j">j</option>
+                    </select></p>
+                    <p>8. Game <select id="q8">
+                        <option value="">-</option>
+                        <option value="a">a</option>
+                        <option value="b">b</option>
+                        <option value="c">c</option>
+                        <option value="d">d</option>
+                        <option value="e">e</option>
+                        <option value="f">f</option>
+                        <option value="g">g</option>
+                        <option value="h">h</option>
+                        <option value="i">i</option>
+                        <option value="j">j</option>
+                    </select></p>
+                    <p>9. Score <select id="q9">
+                        <option value="">-</option>
+                        <option value="a">a</option>
+                        <option value="b">b</option>
+                        <option value="c">c</option>
+                        <option value="d">d</option>
+                        <option value="e">e</option>
+                        <option value="f">f</option>
+                        <option value="g">g</option>
+                        <option value="h">h</option>
+                        <option value="i">i</option>
+                        <option value="j">j</option>
+                    </select></p>
+                    <p>10. Team <select id="q10">
+                        <option value="">-</option>
+                        <option value="a">a</option>
+                        <option value="b">b</option>
+                        <option value="c">c</option>
+                        <option value="d">d</option>
+                        <option value="e">e</option>
+                        <option value="f">f</option>
+                        <option value="g">g</option>
+                        <option value="h">h</option>
+                        <option value="i">i</option>
+                        <option value="j">j</option>
+                    </select></p>
+                </div>
+                <div class="definitions">
+                    <p>a) An expression used to introduce surprising information</p>
+                    <p>b) A group of players forming one side in a game</p>
+                    <p>c) An area where certain sports are played</p>
+                    <p>d) A person who trains and leads a sports team</p>
+                    <p>e) People who support a team or player</p>
+                    <p>f) The number of points in a game</p>
+                    <p>g) A person who participates in a sport</p>
+                    <p>h) Not winning; being defeated</p>
+                    <p>i) A large group of people gathered together</p>
+                    <p>j) A competitive activity with rules</p>
+                </div>
+            </div>
+            <button onclick="checkAnswers('slide1')">Check Answers</button>
+        </div>
+        <div id="slide2" class="slide">
+            <h2>Fill in the gaps with the correct words</h2>
+            <p>Choose from: player, court, fans, game, guess what, coach, crowd, losing, score, team</p>
+            <div class="gap">
+                1. The tennis <select id="g1">
+                    <option value="">Select</option>
+                    <option value="player">player</option>
+                    <option value="court">court</option>
+                    <option value="fans">fans</option>
+                    <option value="game">game</option>
+                    <option value="guess what">guess what</option>
+                    <option value="coach">coach</option>
+                    <option value="crowd">crowd</option>
+                    <option value="losing">losing</option>
+                    <option value="score">score</option>
+                    <option value="team">team</option>
+                </select> was cheering after winning the match.</div>
+            <div class="gap">
+                <br>
+                2. The basketball <select id="g2">
+                    <option value="">Select</option>
+                    <option value="player">player</option>
+                    <option value="court">court</option>
+                    <option value="fans">fans</option>
+                    <option value="game">game</option>
+                    <option value="guess what">guess what</option>
+                    <option value="coach">coach</option>
+                    <option value="crowd">crowd</option>
+                    <option value="losing">losing</option>
+                    <option value="score">score</option>
+                    <option value="team">team</option>
+                </select> was packed with excited spectators.</div>
+            <div class="gap">
+                <br>
+                3. "<select id="g3">
+                    <option value="">Select</option>
+                    <option value="player">player</option>
+                    <option value="court">court</option>
+                    <option value="fans">fans</option>
+                    <option value="game">game</option>
+                    <option value="guess what">guess what</option>
+                    <option value="coach">coach</option>
+                    <option value="crowd">crowd</option>
+                    <option value="losing">losing</option>
+                    <option value="score">score</option>
+                    <option value="team">team</option>
+                </select>! Our team won the championship!" he exclaimed.</div>
+            <div class="gap">
+                <br>
+                4. The soccer <select id="g4">
+                    <option value="">Select</option>
+                    <option value="player">player</option>
+                    <option value="court">court</option>
+                    <option value="fans">fans</option>
+                    <option value="game">game</option>
+                    <option value="guess what">guess what</option>
+                    <option value="coach">coach</option>
+                    <option value="crowd">crowd</option>
+                    <option value="losing">losing</option>
+                    <option value="score">score</option>
+                    <option value="team">team</option>
+                </select> was very exciting, with a final score of 3-2.</div>
+            <div class="gap">
+                <br>
+                5. The <select id="g5">
+                    <option value="">Select</option>
+                    <option value="player">player</option>
+                    <option value="court">court</option>
+                    <option value="fans">fans</option>
+                    <option value="game">game</option>
+                    <option value="guess what">guess what</option>
+                    <option value="coach">coach</option>
+                    <option value="crowd">crowd</option>
+                    <option value="losing">losing</option>
+                    <option value="score">score</option>
+                    <option value="team">team</option>
+                </select> gave instructions to the players during the timeout.</div>
+            <div class="gap">
+                <br>
+                6. The home <select id="g6">
+                    <option value="">Select</option>
+                    <option value="player">player</option>
+                    <option value="court">court</option>
+                    <option value="fans">fans</option>
+                    <option value="game">game</option>
+                    <option value="guess what">guess what</option>
+                    <option value="coach">coach</option>
+                    <option value="crowd">crowd</option>
+                    <option value="losing">losing</option>
+                    <option value="score">score</option>
+                    <option value="team">team</option>
+                </select> were cheering loudly for their favorite players.</div>
+            <div class="gap">
+                <br>
+                7. Despite <select id="g7">
+                    <option value="">Select</option>
+                    <option value="player">player</option>
+                    <option value="court">court</option>
+                    <option value="fans">fans</option>
+                    <option value="game">game</option>
+                    <option value="guess what">guess what</option>
+                    <option value="coach">coach</option>
+                    <option value="crowd">crowd</option>
+                    <option value="losing">losing</option>
+                    <option value="score">score</option>
+                    <option value="team">team</option>
+                </select> the first set, she came back to win the match.</div>
+            <div class="gap">
+                <br>
+                8. The final <select id="g8">
+                    <option value="">Select</option>
+                    <option value="player">player</option>
+                    <option value="court">court</option>
+                    <option value="fans">fans</option>
+                    <option value="game">game</option>
+                    <option value="guess what">guess what</option>
+                    <option value="coach">coach</option>
+                    <option value="crowd">crowd</option>
+                    <option value="losing">losing</option>
+                    <option value="score">score</option>
+                    <option value="team">team</option>
+                </select> of the basketball game was 88-85.</div>
+            <div class="gap">
+                <br>
+                9. Our <select id="g9">
+                    <option value="">Select</option>
+                    <option value="player">player</option>
+                    <option value="court">court</option>
+                    <option value="fans">fans</option>
+                    <option value="game">game</option>
+                    <option value="guess what">guess what</option>
+                    <option value="coach">coach</option>
+                    <option value="crowd">crowd</option>
+                    <option value="losing">losing</option>
+                    <option value="score">score</option>
+                    <option value="team">team</option>
+                </select> has been training hard for the upcoming tournament.</div>
+            <div class="gap">
+                <br>
+                10. The volleyball <select id="g10">
+                    <option value="">Select</option>
+                    <option value="player">player</option>
+                    <option value="court">court</option>
+                    <option value="fans">fans</option>
+                    <option value="game">game</option>
+                    <option value="guess what">guess what</option>
+                    <option value="coach">coach</option>
+                    <option value="crowd">crowd</option>
+                    <option value="losing">losing</option>
+                    <option value="score">score</option>
+                    <option value="team">team</option>
+                </select> was divided by a net in the middle.</div>
+            <button onclick="checkAnswers('slide2')">Check Answers</button>
+        </div>
+
+        <div class="navigation">
+            <button onclick="changeSlide('prev')">Previous</button>
+            <button onclick="changeSlide('next')" id="nextBtn" style="display: none;">Next</button>
+        </div>
+        <button onclick="location.href='A2activity_options_w3d1.html'">Back to Main Page</button>
+    </div>
+
+    <div id="resultModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal()">&times;</span>
+            <p id="modalText"></p>
+            <button onclick="closeModal()">OK</button>
+        </div>
+    </div>
+
+    <script>
+        let currentSlide = 1;
+        const totalSlides = 2;
+
+        function changeSlide(direction) {
+            document.getElementById(`slide${currentSlide}`).classList.remove('active');
+            if (direction === 'next') {
+                currentSlide = currentSlide < totalSlides ? currentSlide + 1 : 1;
+            } else {
+                currentSlide = currentSlide > 1 ? currentSlide - 1 : totalSlides;
+            }
+            document.getElementById(`slide${currentSlide}`).classList.add('active');
+            toggleNextButton();
+        }
+
+        function toggleNextButton() {
+            const nextBtn = document.getElementById('nextBtn');
+            if (currentSlide === totalSlides) {
+                nextBtn.style.display = 'none';
+            } else {
+                nextBtn.style.display = 'inline-block';
+            }
+        }
+
+        function checkAnswers(slide) {
+            let correct = 0;
+            let total = 0;
+            let questions;
+
+            if (slide === 'slide1') {
+                questions = {
+                q1: 'g', q2: 'c', q3: 'e', q4: 'a', q5: 'd',
+                q6: 'i', q7: 'h', q8: 'j', q9: 'f', q10: 'b'
+                };
+
+            } else {
+                questions = {
+                    g1: 'player', g2: 'court', g3: 'guess what', g4: 'game', g5: 'coach',
+                    g6: 'fans', g7: 'losing', g8: 'score', g9: 'team', g10: 'court'
+                };
+            }
+
+            for (let q in questions) {
+                total++;
+                let selected = document.getElementById(q).value;
+                if (selected === questions[q]) {
+                    correct++;
+                    document.getElementById(q).classList.remove('incorrect');
+                } else {
+                    document.getElementById(q).classList.add('incorrect');
+                }
+            }
+
+            let modalText = correct === total ? 
+                "Great job! You've completed the exercise!" : 
+                `You got ${correct} out of ${total} correct. Try again!`;
+
+            document.getElementById('modalText').innerText = modalText;
+            document.getElementById('resultModal').style.display = "block";
+        }
+
+        function closeModal() {
+            document.getElementById('resultModal').style.display = "none";
+        }
+
+        window.onclick = function(event) {
+            let modal = document.getElementById('resultModal');
+            if (event.target == modal) {
+                modal.style.display = "none";
+            }
+        }
+
+        window.onload = toggleNextButton;
+    </script>
+</body>
+</html>

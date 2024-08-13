@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Do, Have, and Make - Exercise</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 20px;
+            background-color: #b3d9ff;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background-color: #e6f3ff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        h1 {
+            color: #333;
+        }
+        .exercise {
+            margin-bottom: 20px;
+        }
+        .sentence {
+            margin-bottom: 10px;
+        }
+        select {
+            margin-right: 10px;
+        }
+        .button {
+            display: inline-block;
+            background-color: #2ecc71;
+            color: white;
+            padding: 10px 20px;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+            margin-right: 10px;
+            border: none;
+            cursor: pointer;
+        }
+        .button:hover {
+            background-color: #27ae60;
+        }
+        .navigation {
+            margin-top: 20px;
+        }
+        .incorrect {
+            color: red;
+        }
+        #resultMessage {
+            margin-top: 20px;
+            font-weight: bold;
+            font-size: 1.2em;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Do, Have, and Make - Exercise</h1>
+        <p>Select the correct verb for each sentence:</p>
+
+        <div id="exercise" class="exercise"></div>
+
+        <button id="checkAnswers" class="button">Check Answers</button>
+
+        <div id="resultMessage"></div>
+
+        <div class="navigation">
+            <a href="A2activity_options_w2d1v1.html" class="button">Back</a>
+            <a href="A2activity_options_w2d1.html" class="button">Back to Main Page</a>
+        </div>
+    </div>
+
+    <script>
+        const sentences = [
+            { text: "I need to ___ the ironing (pressing clothes).", answer: ["do"] },
+            { text: "We ___ a reservation at the new restaurant.", answer: ["have"] },
+            { text: "I'm ___ a cake for the celebration.", answer: ["making"] },
+            { text: "Today is your day to ___ the shopping (buying groceries).", answer: ["do"] },
+            { text: "She ___ a long-distance relationship.", answer: ["has", "had"] },
+            { text: "I ___ a phone call to confirm the appointment.", answer: ["made"] },
+            { text: "Daniel, have you ___ the cleaning (tidying up)?", answer: ["done"] },
+            { text: "I'm not joking; I ___ a brother who lives abroad.", answer: ["have", "had"] },
+            { text: "We ___ a to-do list for the event. I hope we put everything in the list.", answer: ["made"] },
+            { text: "I can't go to the gym; I have work to ___.", answer: ["do"] },
+            { text: "I ___ a fantastic experience on my trip.", answer: ["had"] },
+            { text: "We need to ___ the gardening (taking care of the garden).", answer: ["do"] },
+            { text: "I can't come; I ___ a headache.", answer: ["have"] },
+            { text: "She needs to ___ the paperwork for the project.", answer: ["do"] },
+            { text: "They always ___ the maintenance on their car.", answer: ["do"] }
+        ];
+
+        const exerciseDiv = document.getElementById('exercise');
+        sentences.forEach((sentence, index) => {
+            const sentenceDiv = document.createElement('div');
+            sentenceDiv.className = 'sentence';
+            sentenceDiv.innerHTML = `
+                ${index + 1}. ${sentence.text}
+                <select id="answer${index}">
+                    <option value="">Choose...</option>
+                    <option value="do">do</option>
+                    <option value="done">done</option>
+                    <option value="does">does</option>
+                    <option value="have">have</option>
+                    <option value="had">had</option>
+                    <option value="has">has</option>
+                    <option value="having">having</option>
+                    <option value="make">make</option>
+                    <option value="made">made</option>
+                    <option value="making">making</option>
+                </select>
+            `;
+            exerciseDiv.appendChild(sentenceDiv);
+        });
+
+        document.getElementById('checkAnswers').addEventListener('click', () => {
+            let correctCount = 0;
+            sentences.forEach((sentence, index) => {
+                const select = document.getElementById(`answer${index}`);
+                const sentenceDiv = select.parentElement;
+                if (sentence.answer.includes(select.value)) {
+                    correctCount++;
+                    sentenceDiv.classList.remove('incorrect');
+                } else {
+                    sentenceDiv.classList.add('incorrect');
+                }
+            });
+            
+            const resultMessage = document.getElementById('resultMessage');
+            if (correctCount === sentences.length) {
+                resultMessage.textContent = "Congratulations! You got all the answers correct! Great job!";
+                resultMessage.style.color = "green";
+            } else {
+                resultMessage.textContent = `You got ${correctCount} out of ${sentences.length} correct. Keep practicing!`;
+                resultMessage.style.color = "blue";
+            }
+        });
+    </script>
+</body>
+</html>

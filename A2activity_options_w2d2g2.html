@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Phrasal Verbs Quiz</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #b3d9ff;
+            margin: 0;
+            padding: 20px;
+        }
+        .container {
+            background-color: #e6f3ff;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        h1 {
+            color: #333;
+        }
+        .question {
+            margin-bottom: 20px;
+        }
+        .options {
+            margin-left: 20px;
+        }
+        .button {
+            display: inline-block;
+            background-color: #2ecc71;
+            color: white;
+            padding: 10px 20px;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+            margin-right: 10px;
+        }
+        .button:hover {
+            background-color: #27ae60;
+        }
+        #result {
+            font-weight: bold;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Phrasal Verbs Quiz</h1>
+        <form id="quiz-form">
+            <div class="question">
+                <p>1. What does "break up" mean in the context of a relationship?</p>
+                <div class="options">
+                    <label><input type="radio" name="q1" value="a"> a) To start dating</label><br>
+                    <label><input type="radio" name="q1" value="b"> b) To end a relationship</label><br>
+                    <label><input type="radio" name="q1" value="c"> c) To propose marriage</label><br>
+                </div>
+            </div>
+            
+            <div class="question">
+                <p>2. In the context of a video call, what does "breaking up" mean?</p>
+                <div class="options">
+                    <label><input type="radio" name="q2" value="a"> a) Ending the call</label><br>
+                    <label><input type="radio" name="q2" value="b"> b) Having problems with the audio or video signal</label><br>
+                    <label><input type="radio" name="q2" value="c"> c) Splitting the screen</label><br>
+                </div>
+            </div>
+            
+            <div class="question">
+                <p>3. What's the common meaning of "turn up"?</p>
+                <div class="options">
+                    <label><input type="radio" name="q3" value="a"> a) To organize an event</label><br>
+                    <label><input type="radio" name="q3" value="b"> b) To leave quickly</label><br>
+                    <label><input type="radio" name="q3" value="c"> c) To arrive, especially unexpectedly</label><br>
+                </div>
+            </div>
+            
+            <div class="question">
+                <p>4. In the context of audio, what does "turn up" mean?</p>
+                <div class="options">
+                    <label><input type="radio" name="q4" value="a"> a) To change the song</label><br>
+                    <label><input type="radio" name="q4" value="b"> b) To decrease volume</label><br>
+                    <label><input type="radio" name="q4" value="c"> c) To increase volume</label><br>
+                </div>
+            </div>
+            
+            <div class="question">
+                <p>5. What does "call back" mean?</p>
+                <div class="options">
+                    <label><input type="radio" name="q5" value="a"> a) To return a phone call</label><br>
+                    <label><input type="radio" name="q5" value="b"> b) To reject a call</label><br>
+                    <label><input type="radio" name="q5" value="c"> c) To forward a call</label><br>
+                </div>
+            </div>
+            
+            <div class="question">
+                <p>6. What type of words are phrasal verbs typically composed of?</p>
+                <div class="options">
+                    <label><input type="radio" name="q6" value="a"> a) A verb and one or two particles</label><br>
+                    <label><input type="radio" name="q6" value="b"> b) Two nouns</label><br>
+                    <label><input type="radio" name="q6" value="c"> c) An adjective and an adverb</label><br>
+                </div>
+            </div>
+            
+            <div class="question">
+                <p>7. In the sentence "Can you turn up the TV? I can't hear it," what does "turn up" mean?</p>
+                <div class="options">
+                    <label><input type="radio" name="q7" value="a"> a) Change the channel</label><br>
+                    <label><input type="radio" name="q7" value="b"> b) Turn off the TV</label><br>
+                    <label><input type="radio" name="q7" value="c"> c) Increase the volume</label><br>
+                </div>
+            </div>
+            
+            <div class="question">
+                <p>8. In the sentence "My old friend turned up at the party," what does "turned up" mean?</p>
+                <div class="options">
+                    <label><input type="radio" name="q8" value="a"> a) Increased the music volume</label><br>
+                    <label><input type="radio" name="q8" value="b"> b) Arrived unexpectedly</label><br>
+                    <label><input type="radio" name="q8" value="c"> c) Left the party</label><br>
+                </div>
+            </div>
+            
+            <div class="question">
+                <p>9. Which statement about phrasal verbs is true?</p>
+                <div class="options">
+                    <label><input type="radio" name="q9" value="a"> a) Their meaning can always be guessed from their parts</label><br>
+                    <label><input type="radio" name="q9" value="b"> b) They are only used in formal English</label><br>
+                    <label><input type="radio" name="q9" value="c"> c) They often have meanings different from their individual words</label><br>
+                </div>
+            </div>
+            
+            <div class="question">
+                <p>10. In the sentence "I'll call you back," what does the speaker intend to do?</p>
+                <div class="options">
+                    <label><input type="radio" name="q10" value="a"> a) Return a phone call</label><br>
+                    <label><input type="radio" name="q10" value="b"> b) Ask the other person to call again</label><br>
+                    <label><input type="radio" name="q10" value="c"> c) End the conversation permanently</label><br>
+                </div>
+            </div>
+            
+            <button type="button" class="button" onclick="checkAnswers()">Check Answers</button>
+        </form>
+        
+        <div id="result"></div>
+        
+        <a href="A2activity_options_w2d2g1.html" class="button">Back</a>
+        <a href="A2activity_options_w2d2.html" class="button">Back to Main Page</a>
+    </div>
+
+    <script>
+        function checkAnswers() {
+            const correctAnswers = ['b', 'b', 'c', 'c', 'a', 'a', 'c', 'b', 'c', 'a'];
+            let score = 0;
+            for (let i = 1; i <= 10; i++) {
+                const selected = document.querySelector(`input[name="q${i}"]:checked`);
+                const options = document.querySelectorAll(`input[name="q${i}"]`);
+                
+                options.forEach(option => {
+                    option.parentNode.style.color = 'black'; // Reset color
+                });
+
+                if (selected) {
+                    if (selected.value === correctAnswers[i-1]) {
+                        score++;
+                    } else {
+                        selected.parentNode.style.color = 'red'; // Highlight wrong answer
+                    }
+                }
+            }
+            
+            let resultMessage = `You got ${score} out of 10 questions correct! `;
+            if (score < 10) {
+                resultMessage += "Questions with red answers are incorrect.";
+            }
+            document.getElementById('result').innerHTML = resultMessage;
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reading Comprehension: The Big Game</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #b3d9ff;
+            margin: 0;
+            padding: 20px;
+        }
+        .container {
+            background-color: #e6f3ff;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        h1, h2 {
+            color: #333;
+        }
+        .dialogue {
+            background-color: #fff;
+            padding: 15px;
+            border-radius: 5px;
+            margin-bottom: 20px;
+        }
+        .question {
+            margin-bottom: 15px;
+        }
+        .options label {
+            display: block;
+            margin-bottom: 5px;
+        }
+        .button {
+            display: inline-block;
+            background-color: #2ecc71;
+            color: white;
+            padding: 10px 20px;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+            margin-top: 20px;
+        }
+        .button:hover {
+            background-color: #27ae60;
+        }
+        #result {
+            font-weight: bold;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Reading Comprehension: The Big Game</h1>
+
+        <div class="dialogue">
+            <h2>The Final Match</h2>
+            <p>The big game of the season was here, and everyone was very excited. The team's coach had spent many weeks helping the players get ready. They practiced every move and plan. The court was full of fans cheering loudly for their teams. As the game began, the score was close, with both teams playing hard to win.</p>
+            <p>In the first half, the home team had trouble playing well. The crowd was worried, and you could hear quiet talks when the other team scored. Seeing this, the coach called a timeout. "Guess what?" he said, looking at each player. "I believe in you all. We have practiced for this moment. Let's win this game!"</p>
+            <p>Feeling motivated, the team played with more energy. The fans, seeing the change, cheered even louder. Each time the home team scored, the fans clapped and shouted happily. The players worked well together, showing how good teamwork can make a difference.</p>
+            <p>When the game ended, the home team had won. The fans were very happy and celebrated the great win and the end of the season.</p>
+        </div>
+
+        <h2>Comprehension Questions</h2>
+        <form id="quiz-form">
+            <div class="question">
+                <p>1. What is the passage about?</p>
+                <div class="options">
+                    <label><input type="radio" name="q1" value="a"> a) A team meeting</label>
+                    <label><input type="radio" name="q1" value="b"> b) The biggest game of the season</label>
+                    <label><input type="radio" name="q1" value="c"> c) A practice session</label>
+                    <label><input type="radio" name="q1" value="d"> d) An award ceremony</label>
+                </div>
+            </div>
+            <div class="question">
+                <p>2. Who helped the players get ready for the game?</p>
+                <div class="options">
+                    <label><input type="radio" name="q2" value="a"> a) The fans</label>
+                    <label><input type="radio" name="q2" value="b"> b) The players themselves</label>
+                    <label><input type="radio" name="q2" value="c"> c) The coach</label>
+                    <label><input type="radio" name="q2" value="d"> d) The other team</label>
+                </div>
+            </div>
+            <div class="question">
+                <p>3. How was the atmosphere as the game started?</p>
+                <div class="options">
+                    <label><input type="radio" name="q3" value="a"> a) Quiet and empty</label>
+                    <label><input type="radio" name="q3" value="b"> b) Tense and quiet</label>
+                    <label><input type="radio" name="q3" value="c"> c) Exciting and noisy</label>
+                    <label><input type="radio" name="q3" value="d"> d) Sad and quiet</label>
+                </div>
+            </div>
+            <div class="question">
+                <p>4. What did the coach do when the home team was not playing well?</p>
+                <div class="options">
+                    <label><input type="radio" name="q4" value="a"> a) He changed all the players</label>
+                    <label><input type="radio" name="q4" value="b"> b) He called a timeout</label>
+                    <label><input type="radio" name="q4" value="c"> c) He left the game</label>
+                    <label><input type="radio" name="q4" value="d"> d) He did nothing</label>
+                </div>
+            </div>
+            <div class="question">
+                <p>5. What did the coach say to motivate the team during the timeout?</p>
+                <div class="options">
+                    <label><input type="radio" name="q5" value="a"> a) "Guess what?"</label>
+                    <label><input type="radio" name="q5" value="b"> b) "Play better!"</label>
+                    <label><input type="radio" name="q5" value="c"> c) "It's all over!"</label>
+                    <label><input type="radio" name="q5" value="d"> d) "Be quiet!"</label>
+                </div>
+            </div>
+            <div class="question">
+                <p>6. How did the fans react after the team started playing better?</p>
+                <div class="options">
+                    <label><input type="radio" name="q6" value="a"> a) They left the game</label>
+                    <label><input type="radio" name="q6" value="b"> b) They booed</label>
+                    <label><input type="radio" name="q6" value="c"> c) They cheered even louder</label>
+                    <label><input type="radio" name="q6" value="d"> d) They were quiet</label>
+                </div>
+            </div>
+            <div class="question">
+                <p>7. What does the story suggest about teamwork?</p>
+                <div class="options">
+                    <label><input type="radio" name="q7" value="a"> a) It isn't helpful</label>
+                    <label><input type="radio" name="q7" value="b"> b) It makes things confusing</label>
+                    <label><input type="radio" name="q7" value="c"> c) It helps teams win</label>
+                    <label><input type="radio" name="q7" value="d"> d) It isn't important</label>
+                </div>
+            </div>
+            <div class="question">
+                <p>8. How did the game end and how did the fans react?</p>
+                <div class="options">
+                    <label><input type="radio" name="q8" value="a"> a) The team lost and the fans were quiet</label>
+                    <label><input type="radio" name="q8" value="b"> b) The game was stopped</label>
+                    <label><input type="radio" name="q8" value="c"> c) The home team won and the fans were very happy</label>
+                    <label><input type="radio" name="q8" value="d"> d) It ended in a tie and fans were sad</label>
+                </div>
+            </div>
+        </form>
+
+        <button class="button" onclick="checkAnswers()">Check Answers</button>
+        <div id="result"></div>
+
+        <a href="A2activity_options_w2d2.html" class="button">Back to Main Page</a>
+    </div>
+
+    <script>
+        function checkAnswers() {
+            const correctAnswers = ['b', 'c', 'c', 'b', 'a', 'c', 'c', 'c'];
+            let score = 0;
+            for (let i = 1; i <= 8; i++) {
+                const selected = document.querySelector(`input[name="q${i}"]:checked`);
+                const options = document.querySelectorAll(`input[name="q${i}"]`);
+
+                options.forEach(option => {
+                    option.parentElement.style.color = 'black'; // Reset color
+                });
+
+                if (selected && selected.value === correctAnswers[i-1]) {
+                    score++;
+                    selected.parentElement.style.color = 'green'; // Highlight correct answer
+                } else {
+                    if (selected) selected.parentElement.style.color = 'red'; // Highlight wrong answer
+                }
+            }
+
+            let resultMessage = `You got ${score} out of 8 questions correct.`;
+            if (score < 8) {
+                resultMessage += " Questions with red answers are incorrect.";
+            }
+            document.getElementById('result').innerHTML = resultMessage;
+        }
+    </script>
+</body>
+</html>
